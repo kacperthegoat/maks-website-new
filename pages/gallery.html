@@ -97,7 +97,7 @@
 
                 <!-- --Filter nav bar ---->
                 <div class="w-full max-w-[98rem] mx-auto px-0 sm:px-6 lg:px-10 relative z-30 mb-16">
-                    <div class="relative group/nav flex items-center">
+                    <div class="relative group/nav flex items-center justify-center">
 
                         <!-- Left arrow -->
                         <button id="scroll-left"
@@ -111,7 +111,7 @@
                         <div id="nav-container"
                             class="bg-white rounded-full shadow-md border mx-4 sm:mx-0 p-2 overflow-x-auto hide-scrollbar scroll-smooth"
                             style="border-color:rgba(20,18,41,0.06); -webkit-overflow-scrolling: touch;">
-                            <ul class="flex items-center gap-2 w-max px-4 sm:px-2 justify-start md:justify-center">
+                            <ul class="flex items-center gap-2 w-max px-4 sm:px-2 justify-center mx-auto">
                                 <li>
                                     <a href="#all"
                                         class="filter-btn block px-4 py-2 rounded-full font-body text-sm md:text-base font-semibold transition-all duration-300 whitespace-nowrap"
@@ -125,7 +125,31 @@
                                         class="filter-btn block px-4 py-2 rounded-full font-body text-sm md:text-base font-semibold transition-all duration-300 whitespace-nowrap"
                                         style="color:rgba(0,0,0,0.80);"
                                         data-filter="fencing">
-                                        Fencing &amp; Gates
+                                        Fencing
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#picket-fencing"
+                                        class="filter-btn block px-4 py-2 rounded-full font-body text-sm md:text-base font-semibold transition-all duration-300 whitespace-nowrap"
+                                        style="color:rgba(0,0,0,0.80);"
+                                        data-filter="picket-fencing">
+                                        Picket Fencing
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#dog-deer-fencing"
+                                        class="filter-btn block px-4 py-2 rounded-full font-body text-sm md:text-base font-semibold transition-all duration-300 whitespace-nowrap"
+                                        style="color:rgba(0,0,0,0.80);"
+                                        data-filter="dog-deer-fencing">
+                                        Dog &amp; Deer Fencing
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#gates"
+                                        class="filter-btn block px-4 py-2 rounded-full font-body text-sm md:text-base font-semibold transition-all duration-300 whitespace-nowrap"
+                                        style="color:rgba(0,0,0,0.80);"
+                                        data-filter="gates">
+                                        Gates
                                     </a>
                                 </li>
                                 <li>
@@ -134,6 +158,38 @@
                                         style="color:rgba(0,0,0,0.80);"
                                         data-filter="decking">
                                         Decking
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#sheds"
+                                        class="filter-btn block px-4 py-2 rounded-full font-body text-sm md:text-base font-semibold transition-all duration-300 whitespace-nowrap"
+                                        style="color:rgba(0,0,0,0.80);"
+                                        data-filter="sheds">
+                                        Sheds
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#pergolas-arbours"
+                                        class="filter-btn block px-4 py-2 rounded-full font-body text-sm md:text-base font-semibold transition-all duration-300 whitespace-nowrap"
+                                        style="color:rgba(0,0,0,0.80);"
+                                        data-filter="pergolas-arbours">
+                                        Pergolas &amp; Arbours
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#trellises"
+                                        class="filter-btn block px-4 py-2 rounded-full font-body text-sm md:text-base font-semibold transition-all duration-300 whitespace-nowrap"
+                                        style="color:rgba(0,0,0,0.80);"
+                                        data-filter="trellises">
+                                        Trellises
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#raised-beds-sleepers"
+                                        class="filter-btn block px-4 py-2 rounded-full font-body text-sm md:text-base font-semibold transition-all duration-300 whitespace-nowrap"
+                                        style="color:rgba(0,0,0,0.80);"
+                                        data-filter="raised-beds-sleepers">
+                                        Raised Beds &amp; Sleepers
                                     </a>
                                 </li>
                             </ul>
@@ -164,100 +220,100 @@
                         </h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
 
-                            <div class="reveal reveal-up block w-full h-full" style="transition-delay:100ms;">
+                            <div class="reveal reveal-up block w-full h-full" data-category="gates" style="transition-delay:100ms;">
                                 <button class="gallery-item w-full relative block rounded-[2rem] overflow-hidden shadow-xl border border-[#40543C]/5 group cursor-pointer focus:outline-none"
                                     data-src="../assets/imgs/gallery/gates-driveway-double.jpg"
                                     data-caption="Fencing and Gates &mdash; Norfolk">
                                     <img src="../assets/imgs/gallery/gates-driveway-double.jpg" alt="Bespoke timber double driveway gates fitted in Norfolk" loading="lazy" decoding="async" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-[#40543C]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
                                         <h4 class="text-white font-heading text-xl font-bold translate-y-2 group-hover:translate-y-0 transition-transform duration-500 text-left">View Detail</h4>
                                     </div>
                                 </button>
                             </div>
 
-                            <div class="reveal reveal-up block w-full h-full" style="transition-delay:200ms;">
+                            <div class="reveal reveal-up block w-full h-full" data-category="fencing" style="transition-delay:200ms;">
                                 <button class="gallery-item w-full relative block rounded-[2rem] overflow-hidden shadow-xl border border-[#40543C]/5 group cursor-pointer focus:outline-none"
                                     data-src="../assets/imgs/gallery/fencing-closeboard-2.jpg"
                                     data-caption="Fencing and Gates &mdash; Norfolk">
                                     <img src="../assets/imgs/gallery/fencing-closeboard-2.jpg" alt="Pressure-treated closeboard fencing alongside a Norfolk driveway" loading="lazy" decoding="async" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-[#40543C]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
                                         <h4 class="text-white font-heading text-xl font-bold translate-y-2 group-hover:translate-y-0 transition-transform duration-500 text-left">View Detail</h4>
                                     </div>
                                 </button>
                             </div>
 
-                            <div class="reveal reveal-up block w-full h-full" style="transition-delay:300ms;">
+                            <div class="reveal reveal-up block w-full h-full" data-category="fencing" style="transition-delay:300ms;">
                                 <button class="gallery-item w-full relative block rounded-[2rem] overflow-hidden shadow-xl border border-[#40543C]/5 group cursor-pointer focus:outline-none"
                                     data-src="../assets/imgs/gallery/fencing-closeboard-1.jpg"
                                     data-caption="Fencing and Gates &mdash; Norfolk">
                                     <img src="../assets/imgs/gallery/fencing-closeboard-1.jpg" alt="New closeboard timber fence installed in a Norwich garden" loading="lazy" decoding="async" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-[#40543C]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
                                         <h4 class="text-white font-heading text-xl font-bold translate-y-2 group-hover:translate-y-0 transition-transform duration-500 text-left">View Detail</h4>
                                     </div>
                                 </button>
                             </div>
 
-                            <div class="reveal reveal-up block w-full h-full" style="transition-delay:100ms;">
+                            <div class="reveal reveal-up block w-full h-full" data-category="gates" style="transition-delay:100ms;">
                                 <button class="gallery-item w-full relative block rounded-[2rem] overflow-hidden shadow-xl border border-[#40543C]/5 group cursor-pointer focus:outline-none"
                                     data-src="../assets/imgs/gallery/gates-five-bar.jpg"
                                     data-caption="Fencing and Gates &mdash; Norfolk">
                                     <img src="../assets/imgs/gallery/gates-five-bar.jpg" alt="Traditional five-bar timber field gate on a gravel driveway" loading="lazy" decoding="async" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-[#40543C]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
                                         <h4 class="text-white font-heading text-xl font-bold translate-y-2 group-hover:translate-y-0 transition-transform duration-500 text-left">View Detail</h4>
                                     </div>
                                 </button>
                             </div>
 
-                            <div class="reveal reveal-up block w-full h-full" style="transition-delay:200ms;">
+                            <div class="reveal reveal-up block w-full h-full" data-category="gates" style="transition-delay:200ms;">
                                 <button class="gallery-item w-full relative block rounded-[2rem] overflow-hidden shadow-xl border border-[#40543C]/5 group cursor-pointer focus:outline-none"
                                     data-src="../assets/imgs/gallery/gates-braced-rear.jpg"
                                     data-caption="Fencing and Gates &mdash; Norfolk">
                                     <img src="../assets/imgs/gallery/gates-braced-rear.jpg" alt="Hand-braced rear of bespoke timber driveway gates" loading="lazy" decoding="async" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-[#40543C]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
                                         <h4 class="text-white font-heading text-xl font-bold translate-y-2 group-hover:translate-y-0 transition-transform duration-500 text-left">View Detail</h4>
                                     </div>
                                 </button>
                             </div>
 
-                            <div class="reveal reveal-up block w-full h-full" style="transition-delay:300ms;">
+                            <div class="reveal reveal-up block w-full h-full" data-category="trellises" style="transition-delay:300ms;">
                                 <button class="gallery-item w-full relative block rounded-[2rem] overflow-hidden shadow-xl border border-[#40543C]/5 group cursor-pointer focus:outline-none"
                                     data-src="../assets/imgs/gallery/trellis-screen.jpg"
                                     data-caption="Fencing and Gates &mdash; Norfolk">
                                     <img src="../assets/imgs/gallery/trellis-screen.jpg" alt="Timber trellis screen built into a raised garden border" loading="lazy" decoding="async" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-[#40543C]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
                                         <h4 class="text-white font-heading text-xl font-bold translate-y-2 group-hover:translate-y-0 transition-transform duration-500 text-left">View Detail</h4>
                                     </div>
                                 </button>
                             </div>
 
-                            <div class="reveal reveal-up block w-full h-full" style="transition-delay:100ms;">
+                            <div class="reveal reveal-up block w-full h-full" data-category="fencing" style="transition-delay:100ms;">
                                 <button class="gallery-item w-full relative block rounded-[2rem] overflow-hidden shadow-xl border border-[#40543C]/5 group cursor-pointer focus:outline-none"
                                     data-src="../assets/imgs/gallery/fencing-sloped-rail.jpg"
                                     data-caption="Fencing and Gates &mdash; Norfolk">
                                     <img src="../assets/imgs/gallery/fencing-sloped-rail.jpg" alt="Timber fencing stepped to follow a sloping garden boundary" loading="lazy" decoding="async" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-[#40543C]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
                                         <h4 class="text-white font-heading text-xl font-bold translate-y-2 group-hover:translate-y-0 transition-transform duration-500 text-left">View Detail</h4>
                                     </div>
                                 </button>
                             </div>
 
-                            <div class="reveal reveal-up block w-full h-full" style="transition-delay:200ms;">
+                            <div class="reveal reveal-up block w-full h-full" data-category="gates" style="transition-delay:200ms;">
                                 <button class="gallery-item w-full relative block rounded-[2rem] overflow-hidden shadow-xl border border-[#40543C]/5 group cursor-pointer focus:outline-none"
                                     data-src="../assets/imgs/gallery/fencing-with-iron-gates.jpg"
                                     data-caption="Fencing and Gates &mdash; Norfolk">
                                     <img src="../assets/imgs/gallery/fencing-with-iron-gates.jpg" alt="Closeboard fencing fitted with wrought iron gates" loading="lazy" decoding="async" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-[#40543C]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
                                         <h4 class="text-white font-heading text-xl font-bold translate-y-2 group-hover:translate-y-0 transition-transform duration-500 text-left">View Detail</h4>
                                     </div>
                                 </button>
                             </div>
 
-                            <div class="reveal reveal-up block w-full h-full" style="transition-delay:300ms;">
+                            <div class="reveal reveal-up block w-full h-full" data-category="fencing" style="transition-delay:300ms;">
                                 <button class="gallery-item w-full relative block rounded-[2rem] overflow-hidden shadow-xl border border-[#40543C]/5 group cursor-pointer focus:outline-none"
                                     data-src="../assets/imgs/gallery/before-old-rotten-fence.jpg"
                                     data-caption="Fencing and Gates &mdash; Norfolk">
                                     <img src="../assets/imgs/gallery/before-old-rotten-fence.jpg" alt="The old rotten fence panels before Standfast Fencing replaced them" loading="lazy" decoding="async" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-[#40543C]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
                                         <h4 class="text-white font-heading text-xl font-bold translate-y-2 group-hover:translate-y-0 transition-transform duration-500 text-left">View Detail</h4>
                                     </div>
                                 </button>
@@ -273,45 +329,45 @@
                         </h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
 
-                            <div class="reveal reveal-up block w-full h-full" style="transition-delay:100ms;">
+                            <div class="reveal reveal-up block w-full h-full" data-category="decking" style="transition-delay:100ms;">
                                 <button class="gallery-item w-full relative block rounded-[2rem] overflow-hidden shadow-xl border border-[#40543C]/5 group cursor-pointer focus:outline-none"
                                     data-src="../assets/imgs/gallery/decking-garden-path.jpg"
                                     data-caption="Decking &mdash; Norfolk">
                                     <img src="../assets/imgs/gallery/decking-garden-path.jpg" alt="Timber decked walkway winding through a planted garden" loading="lazy" decoding="async" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-[#40543C]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
                                         <h4 class="text-white font-heading text-xl font-bold translate-y-2 group-hover:translate-y-0 transition-transform duration-500 text-left">View Detail</h4>
                                     </div>
                                 </button>
                             </div>
 
-                            <div class="reveal reveal-up block w-full h-full" style="transition-delay:200ms;">
+                            <div class="reveal reveal-up block w-full h-full" data-category="decking" style="transition-delay:200ms;">
                                 <button class="gallery-item w-full relative block rounded-[2rem] overflow-hidden shadow-xl border border-[#40543C]/5 group cursor-pointer focus:outline-none"
                                     data-src="../assets/imgs/gallery/decking-raised-walkway.webp"
                                     data-caption="Decking &mdash; Norfolk">
                                     <img src="../assets/imgs/gallery/decking-raised-walkway.webp" alt="Raised timber deck and walkway built through a mature garden" loading="lazy" decoding="async" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-[#40543C]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
                                         <h4 class="text-white font-heading text-xl font-bold translate-y-2 group-hover:translate-y-0 transition-transform duration-500 text-left">View Detail</h4>
                                     </div>
                                 </button>
                             </div>
 
-                            <div class="reveal reveal-up block w-full h-full" style="transition-delay:300ms;">
+                            <div class="reveal reveal-up block w-full h-full" data-category="pergolas-arbours" style="transition-delay:300ms;">
                                 <button class="gallery-item w-full relative block rounded-[2rem] overflow-hidden shadow-xl border border-[#40543C]/5 group cursor-pointer focus:outline-none"
                                     data-src="../assets/imgs/gallery/pergola-lean-to.jpg"
                                     data-caption="Decking &mdash; Norfolk">
                                     <img src="../assets/imgs/gallery/pergola-lean-to.jpg" alt="Timber lean-to pergola fixed against a brick wall" loading="lazy" decoding="async" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-[#40543C]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
                                         <h4 class="text-white font-heading text-xl font-bold translate-y-2 group-hover:translate-y-0 transition-transform duration-500 text-left">View Detail</h4>
                                     </div>
                                 </button>
                             </div>
 
-                            <div class="reveal reveal-up block w-full h-full" style="transition-delay:100ms;">
+                            <div class="reveal reveal-up block w-full h-full" data-category="sheds" style="transition-delay:100ms;">
                                 <button class="gallery-item w-full relative block rounded-[2rem] overflow-hidden shadow-xl border border-[#40543C]/5 group cursor-pointer focus:outline-none"
                                     data-src="../assets/imgs/gallery/shed-timber-cabin.webp"
                                     data-caption="Decking &mdash; Norfolk">
                                     <img src="../assets/imgs/gallery/shed-timber-cabin.webp" alt="Timber cabin and shed built by Standfast Fencing" loading="lazy" decoding="async" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-[#40543C]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
                                         <h4 class="text-white font-heading text-xl font-bold translate-y-2 group-hover:translate-y-0 transition-transform duration-500 text-left">View Detail</h4>
                                     </div>
                                 </button>
@@ -425,7 +481,14 @@
                                 } else {
                                     allGrid.style.display = 'none';
                                     sections.forEach(function (s) {
-                                        s.style.display = (s.getAttribute('data-category') === filter) ? 'block' : 'none';
+                                        var items       = s.querySelectorAll('[data-category]');
+                                        var visibleCount = 0;
+                                        items.forEach(function (item) {
+                                            var match = item.getAttribute('data-category') === filter;
+                                            item.style.display = match ? '' : 'none';
+                                            if (match) visibleCount++;
+                                        });
+                                        s.style.display = visibleCount > 0 ? 'block' : 'none';
                                     });
                                 }
                                 /* Force reflow so reveal works */

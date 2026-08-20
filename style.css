@@ -36,7 +36,7 @@
 
 body  { font-family: var(--font-body); background-color: var(--brand-alice); color: var(--brand-text); }
 h1,h2,h3,h4,h5,h6 { font-family: var(--font-heading); }
-img   { filter: saturate(1.35); }
+img   { filter: saturate(1.485); }
 
 /* --Scroll Reveal Animations --------------------------------------------------*/
 .reveal {
@@ -291,6 +291,26 @@ div[onmouseenter][style*="background:#40543C"] {
 .btn-dark-bg .btn-bubble-icon-container,
 .btn-outline .btn-bubble-icon-container {
     background-color: transparent;
+}
+
+/* Green button variant: primary-green face, darker-green arrow circle */
+.btn-green {
+    background-color: var(--brand-dark);
+    color: #FFFFFF;
+    border: none;
+}
+.btn-green .btn-bubble-fill {
+    background-color: var(--brand-dark-hover);
+}
+.btn-green .btn-bubble-text,
+.btn-green:hover .btn-bubble-text {
+    color: #FFFFFF;
+}
+.btn-green .btn-bubble-icon {
+    color: #FFFFFF;
+}
+.btn-green .btn-bubble-icon-container {
+    background-color: var(--brand-dark-hover);
 }
 
 @media (max-width: 768px) {
