@@ -31,18 +31,19 @@
     <meta name="twitter:image" content="https://www.standfastfence.com/assets/imgs/og-image.jpg" />
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Standfast Fencing">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="preload" as="style"
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900&display=swap">
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap">
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
@@ -50,14 +51,14 @@
     <link rel="stylesheet" href="style.css">
     <style type="text/tailwindcss">
         @theme {
-            --color-brand-dark:   #000000;
-            --color-brand-ocean:  #000000;
+            --color-brand-dark:   #40543C;
+            --color-brand-ocean:  #40543C;
             --color-brand-bronze: #C98756;
             --color-brand-alice:  #F5F3EE;
             --color-brand-beige:  #F5F3EE;
             --color-brand-text:   #000000;
             --color-brand-green:  #0D7F15;
-            --font-heading: 'Playfair Display', serif;
+            --font-heading: 'Timeless Bold', serif;
             --font-body:    'DM Sans', sans-serif;
         }
     </style>
@@ -166,7 +167,9 @@
                 <div
                     class="flex flex-col items-center lg:items-start text-center lg:text-left w-full md:max-w-2xl lg:max-w-[45%] xl:max-w-[45%] reveal reveal-up sm:pr-8 lg:pr-12 xl:pr-16 mx-auto lg:mx-0">
 
-                    <div class="flex items-center justify-center lg:justify-start gap-1 mb-6 mt-2">
+                    <a href="https://www.google.com/search?sa=X&sca_esv=6aa6f5dc69016758&biw=1442&bih=722&sxsrf=APpeQnvnfduCVtlWvJwarWRhwGcvUWBvSQ:1787227563227&q=standfast%20fencing%20reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxI2NTc2sDA0NTK0NDYwMjMxMTAw3cDI-IpRsrgkMS8lLbG4RCEtNS85My9doSi1LDO1vHgRK245AOcTixxSAAAA&rldimm=5730815219302644005&tbm=lcl&hl=en-ES&ved=0CAcQ5foLahcKEwjAqa3Cmq-WAxUAAAAAHQAAAAAQBQ#lkt=LocalPoiReviews&arid=Ci9DQUlRQUNvZENodHljRjlvT2pZNFUwdDNiSFZKZDJFelgyMXJkR1ZOVTJSdFQxRRAB"
+                        target="_blank" rel="noopener noreferrer"
+                        class="flex items-center justify-center lg:justify-start gap-1 mb-6 mt-2 hover:opacity-80 transition-opacity duration-300">
                         <svg class="w-5 h-5 text-[#C98756]" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -188,9 +191,9 @@
                                 d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                         </svg>
                         <span
-                            class="font-body text-[#000000]/80 text-sm ml-2 font-medium leading-none translate-y-[1px]">Fencing,
-                            Decking &amp; Garden Timbercraft</span>
-                    </div>
+                            class="font-body text-[#000000]/80 text-sm ml-2 font-medium leading-none translate-y-[1px]">Five-Star
+                            Rated on Google</span>
+                    </a>
 
                     <h1
                         class="group font-heading text-[2.25rem] sm:text-[2.75rem] lg:text-5xl xl:text-[3.25rem] 2xl:text-[3.75rem] font-bold mb-4 lg:mb-5 leading-tight lg:leading-[1.05] text-[#000000] w-full break-words cursor-default">
@@ -233,22 +236,21 @@
                 <div
                     class="w-full h-full rounded-[2rem] lg:rounded-none overflow-hidden shadow-2xl lg:shadow-none relative">
                     <!-- Images -->
-                    <div id="hero-slideshow" class="relative w-full h-full bg-[#000000]">
-                        <img src="assets/imgs/hero_slider/slide1.jpg" alt="Project 1"
-                            class="slide-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-100 z-10" loading="lazy">
-                        <img src="assets/imgs/hero_slider/slide2.jpeg" alt="Project 2"
-                            class="slide-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0 z-0" loading="lazy">
-                        <img src="assets/imgs/hero_slider/slide3.jpeg" alt="Project 3"
-                            class="slide-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0 z-0" loading="lazy">
-                        <img src="assets/imgs/hero_slider/slide4.jpg" alt="Project 4"
-                            class="slide-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0 z-0" loading="lazy">
-                        <img src="assets/imgs/hero_slider/slide5.jpeg" alt="Project 5"
-                            class="slide-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0 z-0" loading="lazy">
+                    <div id="hero-slideshow" class="relative w-full h-full bg-[#40543C]">
+                        <img src="assets/imgs/hero/hero-1-closeboard-fence.jpg" alt="Newly installed closeboard timber fence in a Norwich garden"
+                            width="1600" height="1200" loading="eager" fetchpriority="high" decoding="async"
+                            class="slide-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-100 z-10">
+                        <img src="assets/imgs/hero/hero-2-driveway-gates.jpg" alt="Bespoke timber driveway gates fitted in Norfolk"
+                            width="1600" height="1200" loading="lazy" decoding="async"
+                            class="slide-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0 z-0">
+                        <img src="assets/imgs/hero/hero-3-braced-gates.jpg" alt="Hand-braced timber driveway gates built by Standfast Fencing"
+                            width="1600" height="1200" loading="lazy" decoding="async"
+                            class="slide-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-0 z-0">
                     </div>
 
                     <!-- Gradient overlay for dot visibility -->
                     <div
-                        class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 to-transparent z-20 pointer-events-none">
+                        class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#40543C]/80 to-transparent z-20 pointer-events-none">
                     </div>
 
                     <!-- Navigation Dots -->
@@ -263,12 +265,6 @@
                         <button
                             class="slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300 focus:outline-none"
                             aria-label="Go to slide 3"></button>
-                        <button
-                            class="slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300 focus:outline-none"
-                            aria-label="Go to slide 4"></button>
-                        <button
-                            class="slide-dot w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all duration-300 focus:outline-none"
-                            aria-label="Go to slide 5"></button>
                     </div>
                 </div>
 
@@ -415,7 +411,7 @@
             }
         </style>
 
-        <div style="background:#000000;" class="text-[#F5F3EE] py-5 border-y border-white/10 shadow-inner">
+        <div style="background:#40543C;" class="text-[#F5F3EE] py-5 border-y border-white/10 shadow-inner">
             <div class="scrolling-wrapper">
                 <div class="scrolling-track flex items-center font-body font-medium tracking-wide text-sm md:text-base">
 
@@ -571,8 +567,8 @@
                 class="w-full max-w-4xl mx-auto px-4 sm:px-8 relative z-20 flex flex-col items-center text-center reveal reveal-up">
 
                 <span
-                    class="inline-block px-5 py-1.5 font-body font-semibold text-sm tracking-widest uppercase rounded-full mb-6 cursor-default transition-colors duration-300"
-                    style="background:#C98756; color:#000000;">
+                    class="tagline-pill inline-block px-5 py-1.5 font-body font-semibold text-sm tracking-widest uppercase rounded-full mb-6 cursor-default transition-colors duration-300"
+                    style="background:#C98756; color:#FFFFFF;">
                     Our Approach
                 </span>
 
@@ -599,7 +595,7 @@
                 </div>
 
                 <div
-                    class="grid grid-cols-3 gap-4 sm:gap-8 border-t border-[#000000]/20 pt-8 mt-2 mb-12 w-full max-w-lg mx-auto">
+                    class="grid grid-cols-3 gap-4 sm:gap-8 border-t border-[#40543C]/20 pt-8 mt-2 mb-12 w-full max-w-lg mx-auto">
                     <div class="group flex flex-col items-center cursor-default text-center">
                         <p
                             class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-[#000000] transition-all duration-500 group-hover:-translate-y-2 group-hover:text-[#C98756] whitespace-nowrap">
@@ -618,15 +614,16 @@
                             class="font-body text-[10px] sm:text-xs md:text-sm uppercase tracking-widest mt-2 font-bold text-[#000000]/60">
                             Waste Left Behind</p>
                     </div>
-                    <div class="group flex flex-col items-center cursor-default text-center">
+                    <a href="https://www.google.com/search?sa=X&sca_esv=6aa6f5dc69016758&biw=1442&bih=722&sxsrf=APpeQnvnfduCVtlWvJwarWRhwGcvUWBvSQ:1787227563227&q=standfast%20fencing%20reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxI2NTc2sDA0NTK0NDYwMjMxMTAw3cDI-IpRsrgkMS8lLbG4RCEtNS85My9doSi1LDO1vHgRK245AOcTixxSAAAA&rldimm=5730815219302644005&tbm=lcl&hl=en-ES&ved=0CAcQ5foLahcKEwjAqa3Cmq-WAxUAAAAAHQAAAAAQBQ#lkt=LocalPoiReviews&arid=Ci9DQUlRQUNvZENodHljRjlvT2pZNFUwdDNiSFZKZDJFelgyMXJkR1ZOVTJSdFQxRRAB"
+                        target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center text-center">
                         <p
                             class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-[#000000] transition-all duration-500 group-hover:-translate-y-2 group-hover:text-[#C98756] whitespace-nowrap">
-                            <span class="auto-counter" data-target="100">0</span>%
+                            <span class="auto-counter" data-target="5">0</span>&#9733;
                         </p>
                         <p
                             class="font-body text-[10px] sm:text-xs md:text-sm uppercase tracking-widest mt-2 font-bold text-[#000000]/60">
-                            Tidy Sites, Every Time</p>
-                    </div>
+                            Star Rated on Google</p>
+                    </a>
                 </div>
 
                 <a href="pages/about.html" class="btn-bubble btn-primary font-body">
@@ -646,16 +643,16 @@
             <div class="w-full max-w-6xl mx-auto mt-16 px-4 sm:px-8 relative z-20">
                 <div class="relative h-[300px] sm:h-[450px] lg:h-[600px] rounded-[2rem] overflow-hidden reveal reveal-up shadow-2xl"
                     id="trust-slideshow">
-                    <img src="assets/imgs/service_imgs/Fencing/WhatsApp Image 2026-04-26 at 15.59.27.jpeg" alt="Timber fencing installed in Norwich by Standfast Fencing" loading="lazy"
+                    <img src="assets/imgs/gallery/fencing-closeboard-1.jpg" alt="Timber fencing installed in Norwich by Standfast Fencing" loading="lazy"
                         decoding="async" class="slide absolute inset-0 w-full h-full object-cover opacity-100">
-                    <img src="assets/imgs/service_imgs/Decking/decking_1.jpg" alt="Garden decking built by Standfast Fencing" loading="lazy"
+                    <img src="assets/imgs/gallery/decking-garden-path.jpg" alt="Garden decking built by Standfast Fencing" loading="lazy"
                         decoding="async" class="slide absolute inset-0 w-full h-full object-cover opacity-0">
-                    <img src="assets/imgs/service_imgs/Fencing/fencing_1.jpeg" alt="Fence panels and posts fitted in Norfolk" loading="lazy"
+                    <img src="assets/imgs/gallery/fencing-closeboard-2.jpg" alt="Fence panels and posts fitted in Norfolk" loading="lazy"
                         decoding="async" class="slide absolute inset-0 w-full h-full object-cover opacity-0 z-0">
 
                     <!-- Gradient overlay for dot visibility -->
                     <div
-                        class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 to-transparent z-20 pointer-events-none">
+                        class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#40543C]/80 to-transparent z-20 pointer-events-none">
                     </div>
 
                     <!-- Navigation Dots -->
@@ -827,8 +824,8 @@
 
                 <div class="flex flex-col items-center text-center mb-16 lg:mb-20 reveal reveal-up">
                     <span
-                        class="inline-block px-5 py-1.5 font-body font-semibold text-sm tracking-widest uppercase rounded-full mb-6 cursor-default transition-colors duration-300"
-                        style="background:#C98756; color:#000000;">
+                        class="tagline-pill inline-block px-5 py-1.5 font-body font-semibold text-sm tracking-widest uppercase rounded-full mb-6 cursor-default transition-colors duration-300"
+                        style="background:#C98756; color:#FFFFFF;">
                         Our Services
                     </span>
 
@@ -849,9 +846,9 @@
 
                     <a href="pages/services.html#fencing"
                         class="group flex flex-col rounded-3xl overflow-hidden reveal reveal-up transition-all duration-500 hover:-translate-y-2"
-                        style="background:#000000;">
+                        style="background:#40543C;">
                         <div class="w-full h-48 sm:h-52 lg:h-48 relative overflow-hidden bg-gray-200 shrink-0">
-                            <img src="assets/imgs/service_imgs/Fencing/fencing_3.jpeg" alt="Timber fencing installed in Norwich by Standfast Fencing" loading="lazy" decoding="async"
+                            <img src="assets/imgs/gallery/fencing-closeboard-1.jpg" alt="Timber fencing installed in Norwich by Standfast Fencing" loading="lazy" decoding="async"
                                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         </div>
                         <div
@@ -873,57 +870,57 @@
 
                     <a href="pages/services.html#structures"
                         class="group flex flex-col rounded-3xl overflow-hidden reveal reveal-up transition-all duration-500 hover:-translate-y-2"
-                        style="background:#000000; transition-delay: 100ms;">
+                        style="background:#40543C; transition-delay: 100ms;">
                         <div class="w-full h-48 sm:h-52 lg:h-48 relative overflow-hidden bg-gray-200 shrink-0">
-                            <img src="assets/imgs/service_imgs/Decking/decking_1.jpg" alt="Garden decking built in Norfolk by Standfast Fencing" loading="lazy" decoding="async"
+                            <img src="assets/imgs/gallery/decking-garden-path.jpg" alt="Garden decking built in Norfolk by Standfast Fencing" loading="lazy" decoding="async"
                                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         </div>
                         <div
                             class="w-full flex flex-col flex-grow justify-between p-5 lg:p-6 text-left transition-colors duration-500 group-hover:bg-[#C98756]">
                             <div>
                                 <h3 class="font-heading text-xl lg:text-2xl font-bold mb-3 text-white">
-                                    Decking and Structures
+                                    Decking and Timber Craft
                                 </h3>
                                 <p class="font-body text-white/80 text-sm lg:text-base leading-relaxed mb-5">
-                                    Ground-level and raised decking, bespoke sheds, pergolas, arbours and made-to-measure trellis.
+                                    Ground-level and raised decking, raised planting beds, sleeper retaining and terracing, edging and built-in steps.
                                 </p>
                             </div>
                             <div class="mt-auto pt-4 border-t border-white/20 w-full">
                                 <p class="font-heading font-bold text-white text-sm md:text-base mb-1">Perfect for</p>
-                                <p class="font-body text-sm text-white/80">Gardens that need somewhere to sit, store or shelter.</p>
+                                <p class="font-body text-sm text-white/80">Gardens that need somewhere to sit, or plots that need shape.</p>
                             </div>
                         </div>
                     </a>
 
-                    <a href="pages/services.html#timbercraft"
+                    <a href="pages/services.html#structures"
                         class="group flex flex-col rounded-3xl overflow-hidden reveal reveal-up transition-all duration-500 hover:-translate-y-2"
-                        style="background:#000000; transition-delay: 200ms;">
+                        style="background:#40543C; transition-delay: 200ms;">
                         <div class="w-full h-48 sm:h-52 lg:h-48 relative overflow-hidden bg-gray-200 shrink-0">
-                            <img src="assets/imgs/service_imgs/Decking/decking_3.jpg" alt="Raised beds and sleeper construction in Norfolk" loading="lazy" decoding="async"
+                            <img src="assets/imgs/StandfastImages/2.jpg" alt="Sheds in Norwich by Standfast Fencing" loading="lazy" decoding="async"
                                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         </div>
                         <div
                             class="w-full flex flex-col flex-grow justify-between p-5 lg:p-6 text-left transition-colors duration-500 group-hover:bg-[#C98756]">
                             <div>
                                 <h3 class="font-heading text-xl lg:text-2xl font-bold mb-3 text-white">
-                                    Garden Timbercraft
+                                    Sheds and Structures
                                 </h3>
                                 <p class="font-body text-white/80 text-sm lg:text-base leading-relaxed mb-5">
-                                    Raised planting beds, sleeper retaining and terracing, edging and built-in steps.
+                                    Bespoke timber sheds, pergolas, arbours and made-to-measure trellis.
                                 </p>
                             </div>
                             <div class="mt-auto pt-4 border-t border-white/20 w-full">
                                 <p class="font-heading font-bold text-white text-sm md:text-base mb-1">Perfect for</p>
-                                <p class="font-body text-sm text-white/80">Sloped plots and gardens that need shape.</p>
+                                <p class="font-body text-sm text-white/80">Gardens that need somewhere to store or shelter.</p>
                             </div>
                         </div>
                     </a>
 
                     <a href="pages/about.html"
                         class="group flex flex-col rounded-3xl overflow-hidden reveal reveal-up transition-all duration-500 hover:-translate-y-2"
-                        style="background:#000000; transition-delay: 300ms;">
+                        style="background:#40543C; transition-delay: 300ms;">
                         <div class="w-full h-48 sm:h-52 lg:h-48 relative overflow-hidden bg-gray-200 shrink-0">
-                            <img src="assets/imgs/service_imgs/Fencing/fencing_5.jpeg" alt="Garden clearance and preparation before fencing work in Norwich" loading="lazy" decoding="async"
+                            <img src="assets/imgs/gallery/before-old-rotten-fence.jpg" alt="Garden clearance and preparation before fencing work in Norwich" loading="lazy" decoding="async"
                                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         </div>
                         <div
@@ -939,9 +936,6 @@
                             <div class="mt-auto pt-4 border-t border-white/20 w-full">
                                 <p class="font-heading font-bold text-white text-sm md:text-base mb-1">Perfect for</p>
                                 <p class="font-body text-sm text-white/80">Any job where the garden needs clearing first.</p>
-                            </div>
-                        </div>
-                    </a>
                             </div>
                         </div>
                     </a>
@@ -969,7 +963,7 @@
         ---------------------------------------------------------------------------------------------------- -->
         <section
             class="relative min-h-[100svh] py-12 lg:py-20 flex items-center justify-center text-[#F5F3EE] overflow-hidden"
-            style="background:#000000;">
+            style="background:#40543C;">
             <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
                 <div class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
 
@@ -977,8 +971,8 @@
                         class="w-full lg:w-5/12 flex flex-col items-center text-center lg:items-start lg:text-left reveal reveal-up mt-4 lg:mt-0">
 
                         <span
-                            class="inline-block px-5 py-2 font-body font-bold text-sm tracking-widest uppercase rounded-full mb-4 lg:mb-6 cursor-default transition-colors duration-300 pill-dark-bg"
-                            style="background:#C98756; color:#000000;">
+                            class="tagline-pill inline-block px-5 py-2 font-body font-bold text-sm tracking-widest uppercase rounded-full mb-4 lg:mb-6 cursor-default transition-colors duration-300 pill-dark-bg"
+                            style="background:#C98756; color:#FFFFFF;">
                             Our Work
                         </span>
 
@@ -1009,14 +1003,13 @@
 
                     <div class="w-full lg:w-6/12 reveal reveal-up" style="transition-delay: 100ms;">
                         <div
-                            class="ba-slider touch-pan-y relative w-full aspect-[25/24] md:aspect-[10/9] lg:aspect-[25/24] rounded-[2.5rem] overflow-hidden cursor-ew-resize shadow-2xl border-4 border-white/5 group bg-[#0A0914]">
-                            <!-- TODO: replace with a real Standfast before/after pair -->
-                            <img src="assets/imgs/service_imgs/Fencing/fencing_3.jpeg" alt="After: completed fencing project in Norwich"
+                            class="ba-slider touch-pan-y relative w-full aspect-[25/24] md:aspect-[10/9] lg:aspect-[25/24] rounded-[2.5rem] overflow-hidden cursor-ew-resize shadow-2xl border-4 border-white/5 group bg-[#40543C]">
+                            <img src="assets/imgs/gallery/fencing-closeboard-1.jpg" alt="After: new closeboard fence completed in Norwich"
                                 loading="lazy" decoding="async"
                                 style="filter: saturate(150%);"
                                 class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none">
-                            <img src="assets/imgs/service_imgs/Fencing/fencing_5.jpeg"
-                                alt="Before: garden boundary prior to Standfast Fencing work" loading="lazy"
+                            <img src="assets/imgs/gallery/before-old-rotten-fence.jpg"
+                                alt="Before: the old rotten fence panels prior to Standfast Fencing work" loading="lazy"
                                 decoding="async"
                                 style="filter: saturate(85%); clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);"
                                 class="ba-before absolute inset-0 w-full h-full object-cover object-center pointer-events-none">
@@ -1033,10 +1026,10 @@
                             </div>
 
                             <div
-                                class="absolute bottom-6 left-6 bg-black/60 backdrop-blur-sm text-white px-4 py-1.5 rounded text-xs font-bold tracking-widest font-body uppercase pointer-events-none z-20">
+                                class="absolute bottom-6 left-6 bg-[#40543C]/60 backdrop-blur-sm text-white px-4 py-1.5 rounded text-xs font-bold tracking-widest font-body uppercase pointer-events-none z-20">
                                 Before</div>
                             <div
-                                class="absolute bottom-6 right-6 bg-black/60 backdrop-blur-sm text-white px-4 py-1.5 rounded text-xs font-bold tracking-widest font-body uppercase pointer-events-none z-20">
+                                class="absolute bottom-6 right-6 bg-[#40543C]/60 backdrop-blur-sm text-white px-4 py-1.5 rounded text-xs font-bold tracking-widest font-body uppercase pointer-events-none z-20">
                                 After</div>
                         </div>
                     </div>
@@ -1048,7 +1041,7 @@
         <!-- -------------------------------------------------- --------------------------------------------------              
              PROCESS SECTION
         -------------------------------------------------- --------------------------------------------------               -->
-        <section class="relative py-20 border-t border-[#000000]/5 bg-white">
+        <section class="relative py-20 border-t border-[#40543C]/5 bg-white">
             <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12">
 
                 <div class="flex flex-col-reverse lg:flex-row gap-12 lg:gap-20 items-start w-full">
@@ -1058,8 +1051,8 @@
 
                         <!-- Step 1 -->
                         <div class="group flex flex-col sm:flex-row items-center text-center sm:text-left gap-5 p-6 sm:p-8 rounded-[1.5rem] transition-all duration-500 border border-white/5 hover:border-transparent hover:shadow-xl reveal reveal-up cursor-default"
-                            style="background:#000000;" onmouseenter="this.style.background='#C98756'"
-                            onmouseleave="this.style.background='#000000'">
+                            style="background:#40543C;" onmouseenter="this.style.background='#C98756'"
+                            onmouseleave="this.style.background='#40543C'">
                             <div
                                 class="flex-shrink-0 w-12 sm:w-20 flex items-center justify-center text-white font-heading text-6xl font-bold transition-colors duration-500">
                                 1</div>
@@ -1087,9 +1080,9 @@
 
                         <!-- Step 2 -->
                         <div class="group flex flex-col sm:flex-row items-center text-center sm:text-left gap-5 p-6 sm:p-8 rounded-[1.5rem] transition-all duration-500 border border-white/5 hover:border-transparent hover:shadow-xl reveal reveal-up cursor-default"
-                            style="background:#000000; transition-delay: 100ms;"
+                            style="background:#40543C; transition-delay: 100ms;"
                             onmouseenter="this.style.background='#C98756'"
-                            onmouseleave="this.style.background='#000000'">
+                            onmouseleave="this.style.background='#40543C'">
                             <div
                                 class="flex-shrink-0 w-12 sm:w-20 flex items-center justify-center text-white font-heading text-6xl font-bold transition-colors duration-500">
                                 2</div>
@@ -1116,9 +1109,9 @@
 
                         <!-- Step 3 -->
                         <div class="group flex flex-col sm:flex-row items-center text-center sm:text-left gap-5 p-6 sm:p-8 rounded-[1.5rem] transition-all duration-500 border border-white/5 hover:border-transparent hover:shadow-xl reveal reveal-up cursor-default"
-                            style="background:#000000; transition-delay: 200ms;"
+                            style="background:#40543C; transition-delay: 200ms;"
                             onmouseenter="this.style.background='#C98756'"
-                            onmouseleave="this.style.background='#000000'">
+                            onmouseleave="this.style.background='#40543C'">
                             <div
                                 class="flex-shrink-0 w-12 sm:w-20 flex items-center justify-center text-white font-heading text-6xl font-bold transition-colors duration-500">
                                 3</div>
@@ -1145,9 +1138,9 @@
 
                         <!-- Step 4 -->
                         <div class="group flex flex-col sm:flex-row items-center text-center sm:text-left gap-5 p-6 sm:p-8 rounded-[1.5rem] transition-all duration-500 border border-white/5 hover:border-transparent hover:shadow-xl reveal reveal-up cursor-default"
-                            style="background:#000000; transition-delay: 300ms;"
+                            style="background:#40543C; transition-delay: 300ms;"
                             onmouseenter="this.style.background='#C98756'"
-                            onmouseleave="this.style.background='#000000'">
+                            onmouseleave="this.style.background='#40543C'">
                             <div
                                 class="flex-shrink-0 w-12 sm:w-20 flex items-center justify-center text-white font-heading text-6xl font-bold transition-colors duration-500">
                                 4</div>
@@ -1176,8 +1169,8 @@
                     <!-- RIGHT: Sticky title panel -->
                     <div class="w-full lg:w-[42%] lg:sticky lg:top-[35vh] self-start flex flex-col items-center lg:items-start text-center lg:text-left">
                         <span
-                            class="inline-block px-5 py-1.5 font-body font-semibold text-sm tracking-widest uppercase rounded-full mb-6 cursor-default"
-                            style="background:#C98756; color:#000000;">
+                            class="tagline-pill inline-block px-5 py-1.5 font-body font-semibold text-sm tracking-widest uppercase rounded-full mb-6 cursor-default"
+                            style="background:#C98756; color:#FFFFFF;">
                             Simple and Reliable
                         </span>
 
@@ -1223,8 +1216,8 @@
             <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
                 <div class="flex flex-col items-center text-center mb-12 reveal reveal-up w-full">
                     <span
-                        class="inline-block px-5 py-1.5 font-body font-bold text-sm tracking-widest uppercase rounded-full mb-6 cursor-default transition-colors duration-300"
-                        style="background:#C98756; color:#000000;">
+                        class="tagline-pill inline-block px-5 py-1.5 font-body font-bold text-sm tracking-widest uppercase rounded-full mb-6 cursor-default transition-colors duration-300"
+                        style="background:#C98756; color:#FFFFFF;">
                         Why Standfast
                     </span>
                     <h2
@@ -1242,12 +1235,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal reveal-up">
 
-                    <div class="bg-white rounded-3xl p-8 shadow-lg border border-black/5 flex flex-col items-start">
-                        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-5" style="background:rgba(13,127,21,0.10);">
-                            <svg class="w-6 h-6 text-[#0D7F15]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21c0-8 5-13 13-13h5v5c0 8-5 13-13 13H3v-5z"></path>
-                            </svg>
-                        </div>
+                    <div class="bg-white rounded-3xl p-8 shadow-lg border border-[#40543C]/5 flex flex-col items-start">
                         <h3 class="font-heading text-xl font-bold text-[#000000] mb-3">Sustainably Sourced Timber</h3>
                         <p class="font-body text-[15px] text-[#000000]/70 leading-relaxed">
                             Every fence, deck and structure we build uses responsibly sourced timber. Better for the
@@ -1255,12 +1243,7 @@
                         </p>
                     </div>
 
-                    <div class="bg-white rounded-3xl p-8 shadow-lg border border-black/5 flex flex-col items-start">
-                        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-5" style="background:rgba(201,135,86,0.15);">
-                            <svg class="w-6 h-6 text-[#C98756]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
+                    <div class="bg-white rounded-3xl p-8 shadow-lg border border-[#40543C]/5 flex flex-col items-start">
                         <h3 class="font-heading text-xl font-bold text-[#000000] mb-3">Licensed Waste Carriers</h3>
                         <p class="font-body text-[15px] text-[#000000]/70 leading-relaxed">
                             The old fence, the cleared shrubs, the offcuts. It all leaves with us and is disposed of
@@ -1268,12 +1251,7 @@
                         </p>
                     </div>
 
-                    <div class="bg-white rounded-3xl p-8 shadow-lg border border-black/5 flex flex-col items-start">
-                        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-5" style="background:rgba(13,127,21,0.10);">
-                            <svg class="w-6 h-6 text-[#0D7F15]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
-                            </svg>
-                        </div>
+                    <div class="bg-white rounded-3xl p-8 shadow-lg border border-[#40543C]/5 flex flex-col items-start">
                         <h3 class="font-heading text-xl font-bold text-[#000000] mb-3">Clearance and Prep Included</h3>
                         <p class="font-body text-[15px] text-[#000000]/70 leading-relaxed">
                             Trees and shrubs in the way? We handle the clearance and prepare the garden before the
@@ -1281,12 +1259,7 @@
                         </p>
                     </div>
 
-                    <div class="bg-white rounded-3xl p-8 shadow-lg border border-black/5 flex flex-col items-start">
-                        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-5" style="background:rgba(201,135,86,0.15);">
-                            <svg class="w-6 h-6 text-[#C98756]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                            </svg>
-                        </div>
+                    <div class="bg-white rounded-3xl p-8 shadow-lg border border-[#40543C]/5 flex flex-col items-start">
                         <h3 class="font-heading text-xl font-bold text-[#000000] mb-3">A Clean, Tidy Finish</h3>
                         <p class="font-body text-[15px] text-[#000000]/70 leading-relaxed">
                             We aim to surpass expectations and leave a beautifully finished job on a tidy site. You
@@ -1324,8 +1297,8 @@
                             class="lg:sticky lg:top-48 flex flex-col items-center text-center lg:items-start lg:text-left reveal reveal-up mt-8 lg:mt-0">
 
                             <span
-                                class="inline-block px-5 py-1.5 font-body font-bold text-sm tracking-widest uppercase rounded-full mb-6 cursor-default transition-colors duration-300"
-                                style="background:#C98756; color:#000000;">
+                                class="tagline-pill inline-block px-5 py-1.5 font-body font-bold text-sm tracking-widest uppercase rounded-full mb-6 cursor-default transition-colors duration-300"
+                                style="background:#C98756; color:#FFFFFF;">
                                 Common Questions
                             </span>
 
@@ -1358,9 +1331,9 @@
                     <div class="w-full lg:w-2/3 reveal reveal-up" style="transition-delay: 150ms;" itemscope
                         itemtype="https://schema.org/FAQPage">
 
-                        <div class="space-y-0 font-body border-t border-[#000000]/10">
+                        <div class="space-y-0 font-body border-t border-[#40543C]/10">
 
-                            <details class="group border-b border-[#000000]/10" itemscope itemprop="mainEntity"
+                            <details class="group border-b border-[#40543C]/10" itemscope itemprop="mainEntity"
                                 itemtype="https://schema.org/Question">
                                 <summary
                                     class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2"
@@ -1380,7 +1353,7 @@
                                 </div>
                             </details>
 
-                            <details class="group border-b border-[#000000]/10" itemscope itemprop="mainEntity"
+                            <details class="group border-b border-[#40543C]/10" itemscope itemprop="mainEntity"
                                 itemtype="https://schema.org/Question">
                                 <summary
                                     class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2"
@@ -1400,7 +1373,7 @@
                                 </div>
                             </details>
 
-                            <details class="group border-b border-[#000000]/10" itemscope itemprop="mainEntity"
+                            <details class="group border-b border-[#40543C]/10" itemscope itemprop="mainEntity"
                                 itemtype="https://schema.org/Question">
                                 <summary
                                     class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2"
@@ -1420,7 +1393,7 @@
                                 </div>
                             </details>
 
-                            <details class="group border-b border-[#000000]/10" itemscope itemprop="mainEntity"
+                            <details class="group border-b border-[#40543C]/10" itemscope itemprop="mainEntity"
                                 itemtype="https://schema.org/Question">
                                 <summary
                                     class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2"
@@ -1440,7 +1413,7 @@
                                 </div>
                             </details>
 
-                            <details class="group border-b border-[#000000]/10" itemscope itemprop="mainEntity"
+                            <details class="group border-b border-[#40543C]/10" itemscope itemprop="mainEntity"
                                 itemtype="https://schema.org/Question">
                                 <summary
                                     class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2"
@@ -1460,7 +1433,7 @@
                                 </div>
                             </details>
 
-                            <details class="group border-b border-[#000000]/10" itemscope itemprop="mainEntity"
+                            <details class="group border-b border-[#40543C]/10" itemscope itemprop="mainEntity"
                                 itemtype="https://schema.org/Question">
                                 <summary
                                     class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2"
@@ -1480,7 +1453,7 @@
                                 </div>
                             </details>
 
-                            <details class="group border-b border-[#000000]/10" itemscope itemprop="mainEntity"
+                            <details class="group border-b border-[#40543C]/10" itemscope itemprop="mainEntity"
                                 itemtype="https://schema.org/Question">
                                 <summary
                                     class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2"
@@ -1500,7 +1473,7 @@
                                 </div>
                             </details>
 
-                            <details class="group border-b border-[#000000]/10" itemscope itemprop="mainEntity"
+                            <details class="group border-b border-[#40543C]/10" itemscope itemprop="mainEntity"
                                 itemtype="https://schema.org/Question">
                                 <summary
                                     class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2"
@@ -1595,7 +1568,7 @@
              BOTTOM CTA SECTION
         ---------------------------------------------------------------------------------------------------- -->
         <section class="relative py-20 flex items-center justify-center text-white overflow-hidden"
-            style="background:#000000;">
+            style="background:#40543C;">
             <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
 
                 <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 w-full">
@@ -1604,7 +1577,7 @@
                         class="w-full lg:w-3/12 reveal reveal-up order-2 lg:order-1 flex justify-center lg:justify-start">
                         <div
                             class="relative w-full max-w-sm lg:max-w-none h-[300px] lg:h-[400px] rounded-[1.5rem] overflow-hidden shadow-2xl">
-                            <img src="assets/imgs/footer1.png" alt="Standfast Fencing timber work in Norfolk"
+                            <img src="assets/imgs/footer1.jpg" alt="Standfast Fencing timber work in Norfolk"
                                 loading="lazy"
                                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-110">
                         </div>
@@ -1614,8 +1587,8 @@
                         class="w-full lg:w-6/12 text-center reveal reveal-up order-1 lg:order-2 flex flex-col items-center">
 
                         <span
-                            class="inline-block px-5 py-1.5 font-body font-bold text-sm tracking-widest uppercase rounded-full mb-6 cursor-default shadow-sm transition-colors duration-300 pill-dark-bg"
-                            style="background:#C98756; color:#000000;">
+                            class="tagline-pill inline-block px-5 py-1.5 font-body font-bold text-sm tracking-widest uppercase rounded-full mb-6 cursor-default shadow-sm transition-colors duration-300 pill-dark-bg"
+                            style="background:#C98756; color:#FFFFFF;">
                             Ready to Get Started?
                         </span>
 
@@ -1646,7 +1619,7 @@
                         style="transition-delay: 200ms;">
                         <div
                             class="relative w-full max-w-sm lg:max-w-none h-[300px] lg:h-[400px] rounded-[1.5rem] overflow-hidden shadow-2xl">
-                            <img src="assets/imgs/footer2.png"
+                            <img src="assets/imgs/footer2.jpg"
                                 alt="Completed fencing project by Standfast Fencing" loading="lazy"
                                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-110">
                         </div>

@@ -2,19 +2,29 @@
    Standfast Fencing — Global Stylesheet
    ============================================================ */
 
+/* --Timeless (heading / display face) --------------------------------------------------*/
+@font-face {
+    font-family: 'Timeless Bold';
+    src: url('/assets/Font/timeless/Timeless-Bold.ttf') format('truetype');
+    font-weight: 400 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
-    --brand-dark:   #000000;
-    --brand-ocean:  #000000;
+    --brand-dark:   #40543C;
+    --brand-ocean:  #40543C;
     --brand-bronze: #C98756;
     --brand-alice:  #F5F3EE;
     --brand-beige:  #F5F3EE;
     --brand-text:   #000000;
-    --font-heading: 'Playfair Display', serif;
+    --brand-dark-hover: #21321D;
+    --font-heading: 'Timeless Bold', serif;
     --font-body:    'DM Sans', sans-serif;
     
     /* Legacy variables for compatibility */
-    --midnight:     #000000;
-    --ocean:        #000000;
+    --midnight:     #40543C;
+    --ocean:        #40543C;
     --ocean-light:  #C98756;
     --ocean-dark:   #A76B3F;
     --brand-green:  #0D7F15;
@@ -142,18 +152,18 @@ span[style*="background:#C98756"] {
     cursor: default;
 }
 span[style*="background:#C98756"]:hover {
-    background: #000000 !important;
-    color: #F5F3EE !important;
+    background: #40543C !important;
+    color: #FFFFFF !important;
     box-shadow: 0 4px 16px rgba(20, 18, 41, 0.30);
 }
 
-span[style*="background:#000000"] {
+span[style*="background:#40543C"] {
     transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
     cursor: default;
 }
-span[style*="background:#000000"]:hover {
+span[style*="background:#40543C"]:hover {
     background: #C98756 !important;
-    color: #000000 !important;
+    color: #FFFFFF !important;
     box-shadow: 0 4px 16px rgba(232, 176, 30, 0.30);
 }
 
@@ -167,7 +177,7 @@ span.pill-dark-bg:hover {
     box-shadow: 0 4px 16px rgba(245, 243, 238, 0.30);
 }
 
-div[onmouseenter][style*="background:#000000"] {
+div[onmouseenter][style*="background:#40543C"] {
     transition: background 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -238,91 +248,49 @@ div[onmouseenter][style*="background:#000000"] {
     transform: rotate(0deg);
 }
 
-.btn-primary {
-    background-color: var(--bronze);
-    color: var(--midnight);
-}
-.btn-primary .btn-bubble-fill {
-    background-color: var(--midnight);
-}
-.btn-primary .btn-bubble-text {
-    color: var(--midnight);
-}
-.btn-primary:hover .btn-bubble-text {
-    color: var(--alice);
-}
-.btn-primary .btn-bubble-icon {
-    color: var(--alice);
-}
-
-.btn-secondary {
-    background-color: var(--midnight);
-    color: var(--alice);
-}
-.btn-secondary .btn-bubble-fill {
-    background-color: var(--bronze);
-}
-.btn-secondary .btn-bubble-text {
-    color: var(--alice);
-}
-.btn-secondary:hover .btn-bubble-text {
-    color: var(--midnight);
-}
-.btn-secondary .btn-bubble-icon {
-    color: var(--midnight);
-}
-
-.btn-light {
-    background-color: var(--alice);
-    color: var(--midnight);
-    border: 1px solid rgba(20, 18, 41, 0.15);
-}
-.btn-light .btn-bubble-fill {
-    background-color: var(--midnight);
-}
-.btn-light .btn-bubble-text {
-    color: var(--midnight);
-}
-.btn-light:hover .btn-bubble-text {
-    color: var(--alice);
-}
-.btn-light .btn-bubble-icon {
-    color: var(--alice);
-}
-
-.btn-dark-bg {
-    background-color: var(--bronze);
-    color: var(--midnight);
-}
-.btn-dark-bg .btn-bubble-fill {
-    background-color: var(--alice);
-}
-.btn-dark-bg .btn-bubble-text {
-    color: var(--midnight);
-}
-.btn-dark-bg:hover .btn-bubble-text {
-    color: var(--midnight);
-}
-.btn-dark-bg .btn-bubble-icon {
-    color: var(--midnight);
-}
-
+/* All button variants share one treatment: bronze face, white label,
+   darker-bronze arrow circle that expands to fill the button on hover. */
+.btn-primary,
+.btn-secondary,
+.btn-light,
+.btn-dark-bg,
 .btn-outline {
-    background-color: transparent;
-    color: var(--midnight);
-    border: 1.5px solid rgba(20, 18, 41, 0.15);
+    background-color: var(--bronze);
+    color: #FFFFFF;
+    border: none;
 }
+.btn-primary .btn-bubble-fill,
+.btn-secondary .btn-bubble-fill,
+.btn-light .btn-bubble-fill,
+.btn-dark-bg .btn-bubble-fill,
 .btn-outline .btn-bubble-fill {
-    background-color: var(--midnight);
+    background-color: var(--bronze-dark);
 }
-.btn-outline .btn-bubble-text {
-    color: var(--midnight);
-}
+.btn-primary .btn-bubble-text,
+.btn-secondary .btn-bubble-text,
+.btn-light .btn-bubble-text,
+.btn-dark-bg .btn-bubble-text,
+.btn-outline .btn-bubble-text,
+.btn-primary:hover .btn-bubble-text,
+.btn-secondary:hover .btn-bubble-text,
+.btn-light:hover .btn-bubble-text,
+.btn-dark-bg:hover .btn-bubble-text,
 .btn-outline:hover .btn-bubble-text {
-    color: var(--alice);
+    color: #FFFFFF;
 }
+.btn-primary .btn-bubble-icon,
+.btn-secondary .btn-bubble-icon,
+.btn-light .btn-bubble-icon,
+.btn-dark-bg .btn-bubble-icon,
 .btn-outline .btn-bubble-icon {
-    color: var(--alice);
+    color: #FFFFFF;
+}
+.btn-primary .btn-bubble-icon-container,
+.btn-secondary .btn-bubble-icon-container,
+.btn-light .btn-bubble-icon-container,
+.btn-dark-bg .btn-bubble-icon-container,
+.btn-outline .btn-bubble-icon-container {
+    background-color: transparent;
 }
 
 @media (max-width: 768px) {
@@ -575,11 +543,11 @@ div[onmouseenter][style*="background:#000000"] {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.logo-white { display: block; }
-.logo-dark { display: none; }
-
-#site-header.gallery-dark-nav .logo-white { display: none; }
-#site-header.gallery-dark-nav .logo-dark { display: block; }
+/* The logo artwork is white-on-transparent. On light backgrounds use .logo-dark,
+   which recolours the same asset to solid dark green without a second file. */
+.logo-dark {
+    filter: brightness(0) saturate(100%) invert(28%) sepia(13%) saturate(1088%) hue-rotate(63deg) brightness(96%) contrast(88%);
+}
 
 .svc-slideshow {
     position: relative;
@@ -629,3 +597,28 @@ div[onmouseenter][style*="background:#000000"] {
 }
 .svc-dot:hover { transform: scale(1.3); }
 .svc-dot.active { background: #C98756; width: 24px; }
+/* ==========================================================================
+   Square corners — site-wide
+   Zeroes every corner radius: Tailwind `rounded-*` utilities, the component
+   styles above, and any radius set in per-page <style> blocks. Kept as a
+   single sweep rather than stripping ~370 `rounded-*` classes by hand, so
+   new markup stays square by default.
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    border-radius: 0 !important;
+}
+
+/* Exceptions to the square-corner sweep above: buttons and taglines keep
+   their original pill radius. Everything else stays square. */
+.btn-bubble,
+.btn-bubble-fill,
+.btn-bubble-icon-container,
+.service-pill,
+.tagline-pill,
+.pill-dark-bg,
+.area-pill,
+.badge {
+    border-radius: 9999px !important;
+}
