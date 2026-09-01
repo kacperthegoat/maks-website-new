@@ -64,8 +64,8 @@
 
     <!-- TODO(client): street address + postcode omitted until Maks confirms 14 Penrice Road can be published.
          "sameAs" lists the client's verified Google Business Profile and Facebook page. No
-         aggregateRating or review markup here — the reviews were collected on a third-party platform.
-         TODO(assets): og-image.jpg not yet generated (Phase 7); "image" points at the logo for now. -->
+         aggregateRating or review markup here — the reviews were collected on a third-party platform. -->
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -75,7 +75,7 @@
       "name": "Norwich Builders",
       "url": "https://www.norwichbuilders.co.uk/",
       "logo": "https://www.norwichbuilders.co.uk/assets/imgs/logo.png",
-      "image": "https://www.norwichbuilders.co.uk/assets/imgs/logo.png",
+      "image": "https://www.norwichbuilders.co.uk/assets/imgs/og-image.jpg",
       "description": "Norwich Builders is a trusted local business covering Norwich & surrounding areas. Norwich Builders is dedicated to providing quality building services. We specialise in all types of building works, from small jobs to large jobs. We are proud of what we do for our clients when we build and enhance their homes.",
       "sameAs": [
         "https://www.google.com/maps/place/?q=place_id:ChIJGVQlQKNjjKsRLJXHcNhGA8c",
@@ -186,11 +186,9 @@
 
                 <div
                     class="w-full h-full rounded-[2rem] lg:rounded-none overflow-hidden shadow-2xl lg:shadow-none relative">
-                    <!-- TODO(assets): single static hero image. Placeholder path — drop the real photo in at
-                         assets/imgs/hero/hero-home.jpg (landscape, min 1600x1200) and update the alt text. -->
                     <div class="relative w-full h-full bg-[#2c3172]">
-                        <img src="assets/imgs/hero/hero-home.jpg"
-                            alt="TODO — building work by Norwich Builders"
+                        <img src="assets/imgs/hero/hero-home.webp"
+                            alt="A cavity wall going up in buff brick, with rigid insulation board behind the outer leaf"
                             width="1600" height="1200" loading="eager" fetchpriority="high" decoding="async"
                             class="absolute inset-0 w-full h-full object-cover">
                     </div>
@@ -231,9 +229,8 @@
                     <a href="pages/services/kitchens.html"
                         class="group flex flex-col rounded-3xl overflow-hidden"
                         style="background:#2c3172;">
-                        <!-- TODO(assets): placeholder — assets/imgs/services/kitchens-1.jpg -->
                         <div class="w-full h-48 sm:h-52 lg:h-48 relative overflow-hidden bg-[#2c3172] shrink-0">
-                            <img src="assets/imgs/services/kitchens-1.jpg" alt="TODO &mdash; kitchens by Norwich Builders" loading="lazy"
+                            <img src="assets/imgs/services/kitchens-1.webp" alt="A newly fitted kitchen in grey shaker units with leather tab handles, a gas hob and a stainless steel splashback" loading="lazy"
                                 class="absolute inset-0 w-full h-full object-cover">
                         </div>
                         <div
@@ -252,9 +249,8 @@
                     <a href="pages/services/bathrooms.html"
                         class="group flex flex-col rounded-3xl overflow-hidden"
                         style="background:#2c3172;">
-                        <!-- TODO(assets): placeholder — assets/imgs/services/bathrooms-1.jpg -->
                         <div class="w-full h-48 sm:h-52 lg:h-48 relative overflow-hidden bg-[#2c3172] shrink-0">
-                            <img src="assets/imgs/services/bathrooms-1.jpg" alt="TODO &mdash; bathrooms by Norwich Builders" loading="lazy"
+                            <img src="assets/imgs/services/bathrooms-1.webp" alt="A finished bathroom with marble-effect tiling, a sliding glass shower enclosure and a black rainfall shower" loading="lazy"
                                 class="absolute inset-0 w-full h-full object-cover">
                         </div>
                         <div
@@ -273,9 +269,8 @@
                     <a href="pages/services/extensions.html"
                         class="group flex flex-col rounded-3xl overflow-hidden"
                         style="background:#2c3172;">
-                        <!-- TODO(assets): placeholder — assets/imgs/services/extensions-1.jpg -->
                         <div class="w-full h-48 sm:h-52 lg:h-48 relative overflow-hidden bg-[#2c3172] shrink-0">
-                            <img src="assets/imgs/services/extensions-1.jpg" alt="TODO &mdash; extensions by Norwich Builders" loading="lazy"
+                            <img src="assets/imgs/services/extensions-1.webp" alt="Blockwork and brickwork walls rising at the rear of a house, with a cement mixer and wheelbarrow on site" loading="lazy"
                                 class="absolute inset-0 w-full h-full object-cover">
                         </div>
                         <div
@@ -294,9 +289,8 @@
                     <a href="pages/services/renovations.html"
                         class="group flex flex-col rounded-3xl overflow-hidden"
                         style="background:#2c3172;">
-                        <!-- TODO(assets): placeholder — assets/imgs/services/renovations-1.jpg -->
                         <div class="w-full h-48 sm:h-52 lg:h-48 relative overflow-hidden bg-[#2c3172] shrink-0">
-                            <img src="assets/imgs/services/renovations-1.jpg" alt="TODO &mdash; renovations by Norwich Builders" loading="lazy"
+                            <img src="assets/imgs/services/renovations-1.webp" alt="A renovated room painted in two tones with a dado rail, new skirting and a new wood-effect floor" loading="lazy"
                                 class="absolute inset-0 w-full h-full object-cover">
                         </div>
                         <div
@@ -315,9 +309,9 @@
                     <a href="pages/services/conversions.html"
                         class="group flex flex-col rounded-3xl overflow-hidden"
                         style="background:#2c3172;">
-                        <!-- TODO(assets): placeholder — assets/imgs/services/conversions-1.jpg -->
+                        <!-- TODO(assets): placeholder — assets/imgs/services/conversions-placeholder.webp -->
                         <div class="w-full h-48 sm:h-52 lg:h-48 relative overflow-hidden bg-[#2c3172] shrink-0">
-                            <img src="assets/imgs/services/conversions-1.jpg" alt="TODO &mdash; conversions by Norwich Builders" loading="lazy"
+                            <img src="assets/imgs/services/conversions-placeholder.webp" alt="Photo to follow &mdash; awaiting conversion project photos from the client" loading="lazy"
                                 class="absolute inset-0 w-full h-full object-cover">
                         </div>
                         <div
@@ -364,9 +358,9 @@
                         class="w-full lg:w-3/12 order-2 lg:order-1 flex justify-center lg:justify-start">
                         <div
                             class="relative w-full max-w-sm lg:max-w-none h-[300px] lg:h-[400px] rounded-[1.5rem] overflow-hidden shadow-2xl bg-[#1f2352]">
-                            <img src="assets/imgs/services/kitchens-2.jpg" alt="TODO &mdash; project photo by Norwich Builders"
+                            <img src="assets/imgs/services/kitchens-2.webp" alt="A completed white kitchen with metro tiled walls, marble-effect worktops and a small dining table"
                                 loading="lazy"
-                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700">
+                                class="absolute inset-0 w-full h-full object-cover">
                         </div>
                     </div>
 
@@ -405,9 +399,9 @@
                     <div class="hidden lg:flex w-full lg:w-3/12 order-3 justify-center lg:justify-end mt-0 lg:mt-16">
                         <div
                             class="relative w-full max-w-sm lg:max-w-none h-[300px] lg:h-[400px] rounded-[1.5rem] overflow-hidden shadow-2xl bg-[#1f2352]">
-                            <img src="assets/imgs/services/extensions-3.jpg"
-                                alt="TODO &mdash; project photo by Norwich Builders" loading="lazy"
-                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700">
+                            <img src="assets/imgs/services/extensions-3.webp"
+                                alt="A finished open-plan kitchen and dining extension, painted white with recessed spotlights" loading="lazy"
+                                class="absolute inset-0 w-full h-full object-cover">
                         </div>
                     </div>
 

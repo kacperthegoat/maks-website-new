@@ -1,5 +1,17 @@
 /* ============================================================
    Norwich Builders — Global Stylesheet
+
+   Building firm covering Norwich and the surrounding areas of
+   Norfolk. Kitchens, bathrooms, extensions, renovations and
+   conversions.
+
+   Brand: navy #2c3172 (dominant), navy-deep #1f2352,
+          gold #e5a824 (accent only — buttons, links, small
+          highlights; never large fills or section backgrounds).
+   Type:  Timeless Bold (headings), DM Sans (body).
+
+   No motion. No keyframes, no scroll effects, no carousels or
+   marquees. Colour and opacity transitions on hover only.
    ============================================================ */
 
 /* --Timeless (heading / display face) --------------------------------------------------*/
@@ -355,8 +367,6 @@ div[onmouseenter][style*="background:#2c3172"] {
     height: auto;
     max-width: 100%;
     display: block;
-    object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.2,0.8,0.2,1), filter 0.4s ease-in-out;
     filter: saturate(1.35);
 }
 .masonry-overlay {
