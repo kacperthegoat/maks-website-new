@@ -147,7 +147,6 @@
                                     onblur="this.style.borderColor='';this.style.boxShadow='';">
                             </div>
 
-
                             <div>
                                 <label for="message" class="block text-base font-bold mb-3" style="color:#000000;">Project Details *</label>
                                 <textarea id="message" name="message" required rows="5"
@@ -185,11 +184,13 @@
                             (function () {
                                 var PAGE_LOAD = Date.now();
                                 /* !!! ACTION REQUIRED BEFORE LAUNCH !!!
-                                                   This was JB Outdoor Services' Google Apps Script endpoint and has been removed.
-                                                   Create a new Google Sheet + Apps Script web app on the site owner's Google account,
-                                                   deploy it, and paste the /exec URL below. Until then the form will not submit. */
-                                var GAS_URL   = 'REPLACE_WITH_NEW_APPS_SCRIPT_EXEC_URL';
-                                var RATE_KEY  = 'sff_last_submit';
+                                   Paste the Web3Forms access key for norwichbuilders@hotmail.com below.
+                                   Get it free at https://web3forms.com — no account needed, the key is
+                                   emailed to the inbox it delivers to. Until it is set, the form refuses
+                                   to submit and tells the visitor to call or email instead. */
+                                var ACCESS_KEY = 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY';
+                                var ENDPOINT   = 'https://api.web3forms.com/submit';
+                                var RATE_KEY  = 'nb_last_submit';
                                 var RATE_MS   = 60 * 60 * 1000; // 1 hour between submissions
 
                                 function sanitise(str) {
@@ -251,29 +252,52 @@
                                         if (emailVal && !validateEmail(emailVal)) { showError('Please enter a valid email address.'); return; }
                                         if (messageVal.length < 10) { showError('Please provide more detail about your project.'); return; }
 
-                                        // 5. Disable button
+                                        // 5. Endpoint not configured yet — fail loudly rather than silently losing the lead
+                                        if (ACCESS_KEY.indexOf('REPLACE_WITH') === 0) {
+                                            showError('The enquiry form is not live yet. Please call 07817 938507 or email norwichbuilders@hotmail.com.');
+                                            return;
+                                        }
+
+                                        // 6. Disable button
                                         submitBtn.disabled = true;
                                         if (submitText) submitText.textContent = 'Sending...';
                                         submitBtn.classList.add('opacity-80', 'cursor-not-allowed');
 
-                                        var payload = { name: nameVal, phone: phoneVal, email: emailVal, message: messageVal };
+                                        var payload = {
+                                            access_key: ACCESS_KEY,
+                                            subject: 'New website enquiry from ' + nameVal,
+                                            from_name: 'Norwich Builders website',
+                                            name: nameVal,
+                                            phone: phoneVal,
+                                            email: emailVal,
+                                            message: messageVal,
+                                            replyto: emailVal
+                                        };
 
-                                        fetch(GAS_URL, {
-                                            method: 'POST',
-                                            mode: 'no-cors',
-                                            headers: { 'Content-Type': 'application/json' },
-                                            body: JSON.stringify(payload)
-                                        })
-                                        .then(function () {
-                                            localStorage.setItem(RATE_KEY, Date.now().toString());
-                                            window.location.href = 'thank-you.html';
-                                        })
-                                        .catch(function (err) {
-                                            console.error('Submission error:', err);
+                                        function failed(msg) {
                                             submitBtn.disabled = false;
                                             if (submitText) submitText.textContent = 'Submit Request';
                                             submitBtn.classList.remove('opacity-80', 'cursor-not-allowed');
-                                            showError('Something went wrong. Please try again or call us directly on 07817 938507.');
+                                            showError(msg);
+                                        }
+
+                                        fetch(ENDPOINT, {
+                                            method: 'POST',
+                                            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                                            body: JSON.stringify(payload)
+                                        })
+                                        .then(function (res) { return res.json(); })
+                                        .then(function (result) {
+                                            if (result && result.success) {
+                                                localStorage.setItem(RATE_KEY, Date.now().toString());
+                                                window.location.href = 'thank-you.html';
+                                            } else {
+                                                failed('We could not send your message. Please call us on 07817 938507 or email norwichbuilders@hotmail.com.');
+                                            }
+                                        })
+                                        .catch(function (err) {
+                                            console.error('Submission error:', err);
+                                            failed('Something went wrong. Please try again or call us directly on 07817 938507.');
                                         });
                                     });
                                 });
@@ -332,6 +356,27 @@
                                     </div>
                                 </div>
 
+                                <!-- WhatsApp -->
+                                <div class="flex items-start gap-4 group">
+                                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 border border-white/10 transition-all duration-300"
+                                        style="background:rgba(255,255,255,0.08);"
+                                        onmouseenter="this.style.background='#e5a824';this.style.borderColor='#e5a824';"
+                                        onmouseleave="this.style.background='rgba(255,255,255,0.08)';this.style.borderColor='rgba(255,255,255,0.10)';">
+                                        <svg class="w-5 h-5" style="color:#e5a824;" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.174.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 016.988 2.896 9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.886-9.885 9.886m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-xs uppercase tracking-widest font-bold mb-2" style="color:rgba(242,247,255,0.55);">WhatsApp</p>
+                                        <a href="https://wa.me/447817938507" target="_blank" rel="noopener noreferrer"
+                                            class="text-lg font-bold transition-colors duration-150"
+                                            style="color:#F5F3EE;"
+                                            onmouseenter="this.style.color='#e5a824'" onmouseleave="this.style.color='#F5F3EE'">
+                                            Message us on WhatsApp
+                                        </a>
+                                    </div>
+                                </div>
+
                                 <!-- Hours -->
                                 <div class="flex items-start gap-4 group">
                                     <div class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 border border-white/10 transition-all duration-300"
@@ -344,9 +389,8 @@
                                     </div>
                                     <div class="flex-1 min-w-0">
                                         <p class="text-xs uppercase tracking-widest font-bold mb-2" style="color:rgba(242,247,255,0.55);">Availability</p>
-                                        <p class="text-lg font-semibold" style="color:#F5F3EE;">No set hours</p>
-                                        <p class="text-base mt-1 italic" style="color:rgba(242,247,255,0.60);">Call or email any time</p>
-                                        <p class="text-base mt-0.5 italic" style="color:rgba(242,247,255,0.60);">we will come back to you</p>
+                                        <p class="text-lg font-semibold" style="color:#F5F3EE;">Monday to Friday, 8am &ndash; 5pm</p>
+                                        <p class="text-base mt-1" style="color:rgba(242,247,255,0.60);">Leave a message outside these hours and we will come back to you.</p>
                                     </div>
                                 </div>
 
@@ -368,37 +412,9 @@
                                     </div>
                                 </div>
 
-                                <!-- Facebook -->
-                                <div class="flex items-start gap-4 group">
-                                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 border border-white/10 transition-all duration-300"
-                                        style="background:rgba(255,255,255,0.08);"
-                                        onmouseenter="this.style.background='#e5a824';this.style.borderColor='#e5a824';"
-                                        onmouseleave="this.style.background='rgba(255,255,255,0.08)';this.style.borderColor='rgba(255,255,255,0.10)';">
-                                        <svg class="w-5 h-5" style="color:#e5a824;" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
-                                        </svg>
-                                    </div>
-                                    <div class="flex-1 min-w-0">
-                                        <p class="text-xs uppercase tracking-widest font-bold mb-2" style="color:rgba(242,247,255,0.55);">Follow Us</p>
-                                        <a href="https://www.facebook.com/profile.php?id=61582059986527" target="_blank" rel="noopener noreferrer"
-                                            class="text-lg font-medium transition-colors duration-150"
-                                            style="color:#F5F3EE;"
-                                            onmouseenter="this.style.color='#e5a824'" onmouseleave="this.style.color='#F5F3EE'">
-                                            Norwich Builders on Facebook
-                                        </a>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
 
-                        <!-- Owner note -->
-                        <div class="relative z-10 mt-12 pt-8 border-t border-white/10">
-                            <p class="font-body text-base leading-relaxed italic" style="color:rgba(242,247,255,0.75);">
-                                "I am often out on site during the day. If I can't pick up, please leave a message or send an email and I will get back to you as soon as I can."
-                            </p>
-                            <span class="font-bold block mt-3" style="color:#F5F3EE;"></span>
-                        </div>
                     </div>
 
                 </div>
@@ -425,16 +441,9 @@
                     </p>
                 </div>
 
-                <!-- Location pill ticker -->
-                <div class="relative mb-12 overflow-hidden">
-                    <div class="absolute inset-y-0 left-0 w-16 sm:w-24 z-10 pointer-events-none"
-                        style="background:linear-gradient(to right,white,transparent);"></div>
-                    <div class="absolute inset-y-0 right-0 w-16 sm:w-24 z-10 pointer-events-none"
-                        style="background:linear-gradient(to left,white,transparent);"></div>
-
-                    <div class="area-ticker-wrap" style="overflow:hidden;">
-                        <div id="area-ticker" class="area-ticker flex gap-3 py-2" style="width:max-content;"></div>
-                    </div>
+                <!-- Service area list — static, wraps -->
+                <div class="mb-12">
+                    <div id="area-list" class="flex flex-wrap justify-center gap-3 py-2"></div>
                 </div>
 
                 <div class="flex flex-col gap-5 xl:gap-8 w-full">
@@ -445,53 +454,63 @@
                         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
                         <div id="service-map" class="w-full h-full z-0 relative"></div>
-                        
                         <script>
                             document.addEventListener('DOMContentLoaded', () => {
-                                // TODO(Phase 6): base coordinates belong to the old client — replace or remove with the map rebuild
-                                const norwichLat = 52.6203;
-                                const norwichLng = 1.4364;
-                                const radiusMeters = 16093.4; // approx service reach
+                                // Norwich city centre — a public geographic reference point used only to frame
+                                // the map. It is NOT the business address and no address is pinned here.
+                                const norwichLat = 52.6309;
+                                const norwichLng = 1.2974;
+                                const radiusMeters = 24140; // ~15 miles, indicative coverage only
 
-                                // Initialize map
                                 const map = L.map('service-map', {
-                                    scrollWheelZoom: false // Prevents map from hijacking page scroll
+                                    scrollWheelZoom: false, // Prevents map from hijacking page scroll
+                                    zoomAnimation: false,
+                                    fadeAnimation: false,
+                                    markerZoomAnimation: false
                                 }).setView([norwichLat, norwichLng], 10);
 
-                                // Minimal, clean tile layer
                                 L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
                                     attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
                                     subdomains: 'abcd',
                                     maxZoom: 19
                                 }).addTo(map);
 
-                                // service area overlay
+                                // Shaded service area — no marker, no pinned address
                                 const serviceRadius = L.circle([norwichLat, norwichLng], {
-                                    color: '#e5a824', // Clearly defined subtle Bronze Gold border
+                                    color: '#e5a824',
                                     weight: 2,
                                     fillColor: '#e5a824',
                                     fillOpacity: 0.15,
                                     radius: radiusMeters,
-                                    interactive: false // Let user click through
+                                    interactive: false
                                 }).addTo(map);
 
-                                // Optional: simple pin at the center
-                                const marker = L.marker([norwichLat, norwichLng]).addTo(map);
-                                marker.bindPopup("<strong style='color:#000000; font-family: sans-serif;'>Norwich Builders</strong><br/><span style='font-family: sans-serif;'>Norwich &amp; surrounding villages</span>");
-
-                                // Auto-adjust zoom to ensure entire catchment area is perfectly visible
-                                map.fitBounds(serviceRadius.getBounds(), { padding: [30, 30] });
+                                map.fitBounds(serviceRadius.getBounds(), { padding: [30, 30], animate: false });
                             });
                         </script>
                     </div>
                 </div>
 
-                <div class="mt-8 flex justify-center">
+                <p class="font-body text-sm text-center mt-5" style="color:rgba(44,49,114,0.55);">
+                    Indicative coverage across Norwich and the surrounding areas. We work on site at your property &mdash; this is a service area, not a shop or office.
+                </p>
+
+                <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="tel:+447817938507"
                          
                          class="btn-bubble btn-secondary font-body">
     <span class="btn-bubble-fill"></span>
     <span class="btn-bubble-text">Call: 07817 938507</span>
+    <span class="btn-bubble-icon-container">
+        <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14m-6-6l6 6-6 6"></path>
+        </svg>
+    </span>
+</a>
+                    <a href="https://wa.me/447817938507" target="_blank" rel="noopener noreferrer"
+                         class="btn-bubble btn-secondary font-body">
+    <span class="btn-bubble-fill"></span>
+    <span class="btn-bubble-text">WhatsApp Us</span>
     <span class="btn-bubble-icon-container">
         <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14m-6-6l6 6-6 6"></path>
@@ -504,17 +523,14 @@
         </section>
 
         <style>
-            .area-ticker { will-change: transform; display: flex; gap: 0.75rem; width: max-content; }
             .area-pill {
                 display: inline-flex; align-items: center; gap: 8px;
                 padding: 11px 22px; border-radius: 999px; border: none;
                 background: #2c3172; white-space: nowrap;
                 font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600;
                 color: white; cursor: default;
-                transition: background 0.35s cubic-bezier(0.4,0,0.2,1), transform 0.2s;
                 user-select: none;
             }
-            .area-pill:hover { background: #e5a824; color: #000000; transform: scale(1.04); }
             .area-pill svg { flex-shrink: 0; }
         </style>
 
@@ -545,165 +561,11 @@
                 return pill;
             }
 
-            var strip = document.getElementById('area-ticker');
-            if (!strip) return;
-
-            towns.concat(towns).forEach(function(town) { strip.appendChild(makePill(town)); });
-
-            var pos = 0, lastTime = null, speedMult = 1.0, targetMult = 1.0, LERP = 0.036;
-            var wrap = strip.closest('.area-ticker-wrap') || strip.parentElement;
-            wrap.addEventListener('mouseenter', function() { targetMult = 0.5; });
-            wrap.addEventListener('mouseleave', function() { targetMult = 1.0; });
-
-            function tick(ts) {
-                if (lastTime === null) lastTime = ts;
-                var dt = ts - lastTime; lastTime = ts;
-                speedMult += (targetMult - speedMult) * LERP;
-                var halfWidth = strip.scrollWidth / 2;
-                var baseSpeed = halfWidth / 55000;
-                pos += baseSpeed * speedMult * dt;
-                if (pos >= halfWidth) pos -= halfWidth;
-                strip.style.transform = 'translateX(-' + pos + 'px)';
-                requestAnimationFrame(tick);
-            }
-            requestAnimationFrame(tick);
+            var list = document.getElementById('area-list');
+            if (!list) return;
+            towns.forEach(function(town) { list.appendChild(makePill(town)); });
         })();
         </script>
-
-        <!-- Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
-             FAQ
-        Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â -->
-        <section id="faq" class="relative min-h-[100svh] py-20 pt-28 md:pt-36 flex items-center justify-center" style="background:#F5F3EE;">
-            <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
-
-                <div class="flex flex-col lg:flex-row gap-12 lg:gap-24 relative w-full">
-
-                    <div class="w-full lg:w-1/3 relative">
-                        <div class="lg:sticky lg:top-40 flex flex-col items-center text-center lg:items-start lg:text-left mt-8 lg:mt-0">
-
-                            <span class="tagline-pill inline-block px-5 py-1.5 font-body font-semibold text-sm tracking-widest uppercase rounded-full mb-6 cursor-default"
-                                style="background:#e5a824; color:#2c3172;">
-                                Questions &amp; Answers
-                            </span>
-
-                            <h2 class="group font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-[#000000] leading-tight flex flex-col items-center lg:items-start mb-8 cursor-default">
-                                Got Questions?
-                                <span class="block w-16 md:w-20 h-0.5 md:h-[2px] bg-[#e5a824] mt-4 lg:mt-6 rounded-full transition-all duration-300 ease-in-out group-hover:w-32 md:group-hover:w-44 group-hover:bg-[#e5a824]/80"></span>
-                            </h2>
-
-                            <p class="font-body text-base sm:text-lg md:text-xl mb-10 max-w-sm leading-relaxed" style="color:rgba(44,49,114,0.80);">
-                                Can't find the answer you're looking for? Get in touch and we will be happy to help.
-                            </p>
-
-                            <a href="tel:+447817938507"
-                                 
-                                 class="btn-bubble btn-secondary font-body">
-    <span class="btn-bubble-fill"></span>
-    <span class="btn-bubble-text">Call Us Now</span>
-    <span class="btn-bubble-icon-container">
-        <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14m-6-6l6 6-6 6"></path>
-        </svg>
-    </span>
-</a>
-                        </div>
-                    </div>
-
-                    <div class="w-full lg:w-2/3"
-                        itemscope itemtype="https://schema.org/FAQPage">
-                        <div class="space-y-0 font-body border-t" style="border-color:rgba(44,49,114,0.10);">
-
-                            <details class="group border-b" style="border-color:rgba(0,0,0,0.10);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                                <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
-                                    <span class="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-[#000000] pr-6">What areas around Norwich do you cover?</span>
-                                    <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center text-[#000000] shadow-sm transition-transform duration-300 group-open:rotate-180">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
-                                    </span>
-                                </summary>
-                                <div class="pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" style="color:rgba(0,0,0,0.80);" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                                    <span itemprop="text">We cover Norwich and the surrounding areas across Norfolk. If you are not sure whether we reach you, give us a call and we will confirm straight away.</span>
-                                </div>
-                            </details>
-
-                            <details class="group border-b" style="border-color:rgba(0,0,0,0.10);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                                <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
-                                    <span class="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-[#000000] pr-6">How does the process work from first contact to finished project?</span>
-                                    <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center text-[#000000] shadow-sm transition-transform duration-300 group-open:rotate-180">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
-                                    </span>
-                                </summary>
-                                <div class="pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" style="color:rgba(0,0,0,0.80);" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                                    <span itemprop="text">Get in touch by phone or email and we will arrange a site visit to look over the job, talk through exactly what you want and answer any questions. You will get a clear, honest quote. Once you are happy, we schedule the work to suit you and keep you informed throughout.</span>
-                                </div>
-                            </details>
-
-                            <details class="group border-b" style="border-color:rgba(0,0,0,0.10);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                                <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
-                                    <span class="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-[#000000] pr-6">Do you offer free quotes?</span>
-                                    <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center text-[#000000] shadow-sm transition-transform duration-300 group-open:rotate-180">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
-                                    </span>
-                                </summary>
-                                <div class="pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" style="color:rgba(0,0,0,0.80);" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                                    <span itemprop="text"><!-- TODO(client): confirm with Maks that quotes are free and no-obligation before publishing this answer. -->We will visit the site, assess the job in person, and give you a clear, detailed price so you know exactly what is involved before any work starts.</span>
-                                </div>
-                            </details>
-
-                            <details class="group border-b" style="border-color:rgba(0,0,0,0.10);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                                <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
-                                    <span class="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-[#000000] pr-6">What types of building work do you do?</span>
-                                    <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center text-[#000000] shadow-sm transition-transform duration-300 group-open:rotate-180">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
-                                    </span>
-                                </summary>
-                                <div class="pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" style="color:rgba(0,0,0,0.80);" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                                    <span itemprop="text">Kitchens, bathrooms, extensions, renovations and conversions. We specialise in all types of building works, from small jobs to large jobs.</span>
-                                </div>
-                            </details>
-
-                            <details class="group border-b" style="border-color:rgba(0,0,0,0.10);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                                <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
-                                    <span class="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-[#000000] pr-6">Do you take the waste away?</span>
-                                    <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center text-[#000000] shadow-sm transition-transform duration-300 group-open:rotate-180">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
-                                    </span>
-                                </summary>
-                                <div class="pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" style="color:rgba(0,0,0,0.80);" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                                    <span itemprop="text"><!-- TODO(client): fencing-specific question replaced. Ask Maks what he wants here and whether he holds a waste carrier licence — do not claim one until confirmed. -->TODO — awaiting the client&rsquo;s answer.</span>
-                                </div>
-                            </details>
-
-                            <details class="group border-b" style="border-color:rgba(0,0,0,0.10);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                                <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
-                                    <span class="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-[#000000] pr-6">TODO &mdash; question to be replaced</span>
-                                    <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center text-[#000000] shadow-sm transition-transform duration-300 group-open:rotate-180">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
-                                    </span>
-                                </summary>
-                                <div class="pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" style="color:rgba(0,0,0,0.80);" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                                    <span itemprop="text"><!-- TODO(client): timber-sourcing question belongs to the old fencing client. Ask Maks for a replacement question and answer. -->TODO &mdash; awaiting the client&rsquo;s answer.</span>
-                                </div>
-                            </details>
-
-
-                            <details class="group border-b" style="border-color:rgba(0,0,0,0.10);" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                                <summary class="flex justify-between items-center cursor-pointer list-none py-8 md:py-10 pr-2" itemprop="name">
-                                    <span class="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-[#000000] pr-6">What are your working hours?</span>
-                                    <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center text-[#000000] shadow-sm transition-transform duration-300 group-open:rotate-180">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
-                                    </span>
-                                </summary>
-                                <div class="pb-8 md:pb-10 text-base sm:text-lg lg:text-xl leading-relaxed pr-8 md:pr-12" style="color:rgba(0,0,0,0.80);" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                                    <span itemprop="text">We are available Monday to Friday, 8am to 5pm. Call or email and we will get back to you as soon as we can. We are often out on site, so if we cannot pick up, leave a message or send an email.</span>
-                                </div>
-                            </details>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
 
         <!-- Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
              BOTTOM CTA
@@ -715,8 +577,9 @@
 
                     <div class="w-full lg:w-1/2">
                         <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl group" style="border: 2px solid #F5F3EE;">
-                            <img src="../assets/imgs/gallery/gates-driveway-double.jpg"
-                                alt="Norwich Builders team working on a project in Norfolk"
+                            <!-- TODO(assets): placeholder — assets/imgs/general/contact-cta.jpg -->
+                            <img src="../assets/imgs/general/contact-cta.jpg"
+                                alt="TODO &mdash; building work by Norwich Builders in Norfolk"
                                 loading="lazy"
                                 class="w-full h-80 md:h-[500px] lg:h-[600px] object-cover transition-transform duration-700">
                         </div>
@@ -785,45 +648,6 @@
                 if (span.style && span.style.background) {
                     span.style.transition = 'width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.3s ease';
                 }
-            });
-        })();
-
-        /* Ã¢â€â‚¬Ã¢â€â‚¬ FAQ accordion smooth open/close Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
-           Uses the Web Animations API to animate height so the
-           accordion feels as fluid as the rest of the page.
-        Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
-        (function () {
-            document.querySelectorAll('details').forEach(function(details) {
-                var summary = details.querySelector('summary');
-                var content = details.querySelector('div');
-                if (!summary || !content) return;
-
-                content.style.overflow = 'hidden';
-
-                summary.addEventListener('click', function(e) {
-                    e.preventDefault();
-
-                    if (details.open) {
-                        var anim = content.animate(
-                            [{ height: content.scrollHeight + 'px', opacity: 1 },
-                             { height: '0px', opacity: 0 }],
-                            { duration: 320, easing: 'cubic-bezier(0.2, 0.8, 0.2, 1)', fill: 'forwards' }
-                        );
-                        anim.onfinish = function() {
-                            details.removeAttribute('open');
-                            content.style.removeProperty('height');
-                            content.style.removeProperty('opacity');
-                        };
-                    } else {
-                        details.setAttribute('open', '');
-                        var h = content.scrollHeight;
-                        content.animate(
-                            [{ height: '0px', opacity: 0 },
-                             { height: h + 'px', opacity: 1 }],
-                            { duration: 380, easing: 'cubic-bezier(0.2, 0.8, 0.2, 1)', fill: 'forwards' }
-                        );
-                    }
-                });
             });
         })();
 

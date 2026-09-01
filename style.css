@@ -38,9 +38,6 @@ img   { filter: saturate(1.485); }
     user-select: none;
 }
 
-/* --FAQ Accordion --------------------------------------------------*/
-details > summary::-webkit-details-marker { display: none; }
-
 /* --Custom Checkbox (form tick) --------------------------------------------------*/
 .custom-tick {
     -webkit-appearance: none;
@@ -307,25 +304,6 @@ div[onmouseenter][style*="background:#2c3172"] {
         padding-right: 1.5rem !important;
     }
 
-    #faq details summary {
-        align-items: center !important;
-        text-align: left !important;
-    }
-    #faq details summary span:first-child {
-        text-align: left !important;
-        flex: 1 1 auto !important;
-    }
-    #faq details summary span.flex-shrink-0 {
-        margin-left: auto !important;
-        flex-shrink: 0 !important;
-    }
-    #faq details > div {
-        text-align: left !important;
-    }
-    #faq .lg\\:sticky {
-        align-items: center !important;
-        text-align: center !important;
-    }
 
     .sf-bullet-row,
     main section div.space-y-4 > div.flex {

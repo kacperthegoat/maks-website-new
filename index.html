@@ -63,7 +63,9 @@
     </style>
 
     <!-- TODO(client): street address + postcode omitted until Maks confirms 14 Penrice Road can be published.
-         TODO(client): "sameAs" omitted until the live Facebook page is confirmed.
+         "sameAs" lists the client's verified Google Business Profile only. TODO(client): add the
+         Facebook page once Maks confirms which of the two is live. No aggregateRating or review
+         markup here — the reviews were collected on a third-party platform.
          TODO(assets): og-image.jpg not yet generated (Phase 7); "image" points at the logo for now. -->
     <script type="application/ld+json">
     {
@@ -76,6 +78,9 @@
       "logo": "https://www.norwichbuilders.co.uk/assets/imgs/logo.png",
       "image": "https://www.norwichbuilders.co.uk/assets/imgs/logo.png",
       "description": "Norwich Builders is a trusted local business covering Norwich & surrounding areas. Norwich Builders is dedicated to providing quality building services. We specialise in all types of building works, from small jobs to large jobs. We are proud of what we do for our clients when we build and enhance their homes.",
+      "sameAs": [
+        "https://www.google.com/maps/place/?q=place_id:ChIJGVQlQKNjjKsRLJXHcNhGA8c"
+      ],
       "telephone": "+447817938507",
       "email": "norwichbuilders@hotmail.com",
       "address": {
@@ -438,78 +443,6 @@
 
 </style>
 
-<script>
-        // Form submission handler
-        (function () {
-            /* !!! ACTION REQUIRED BEFORE LAUNCH !!!
-                               This was JB Outdoor Services' Google Apps Script endpoint and has been removed.
-                               Create a new Google Sheet + Apps Script web app on the site owner's Google account,
-                               deploy it, and paste the /exec URL below. Until then the form will not submit. */
-            var GAS_URL      = 'REPLACE_WITH_NEW_APPS_SCRIPT_EXEC_URL';
-            var RATE_KEY     = 'sff_last_submit';
-            var RATE_MS      = 60 * 60 * 1000; // 1 hour between submissions
-            var PAGE_LOAD    = Date.now();
-
-            function sanitise(str) {
-                return String(str || '').replace(/<[^>]*>/g, '').trim().slice(0, 2000);
-            }
-
-            function handleFormSubmit(form, successCallback) {
-                form.addEventListener('submit', function (e) {
-                    e.preventDefault();
-
-                    // Honeypot
-                    var honey = form.querySelector('[name="website_url"], [name="botcheck"]');
-                    if (honey && honey.value) return;
-
-                    // Time check
-                    if (Date.now() - PAGE_LOAD < 3000) return;
-
-                    // Rate limit
-                    var lastSub = parseInt(localStorage.getItem(RATE_KEY) || '0');
-                    if (lastSub && Date.now() - lastSub < RATE_MS) {
-                        alert('You have already submitted a request. Please call us directly on 07817 938507.');
-                        return;
-                    }
-
-                    // Submission cap per session
-                    var count = parseInt(sessionStorage.getItem('formSubmitCount') || '0');
-                    if (count >= 2) { alert('Too many submissions. Please call us directly on 07817 938507.'); return; }
-
-                    var gdpr = form.querySelector('[name="gdpr"]');
-                    if (gdpr && !gdpr.checked) { alert('Please agree to be contacted before submitting.'); return; }
-
-                    var btn = form.querySelector('button[type="submit"]');
-                    var originalHTML = btn ? btn.innerHTML : '';
-                    if (btn) { btn.disabled = true; btn.innerHTML = 'Sending...'; }
-
-                    var data = {
-                        name:    sanitise(form.querySelector('[name="name"]')    ? form.querySelector('[name="name"]').value    : ''),
-                        email:   sanitise(form.querySelector('[name="email"]')   ? form.querySelector('[name="email"]').value   : ''),
-                        phone:   sanitise(form.querySelector('[name="phone"]')   ? form.querySelector('[name="phone"]').value   : ''),
-                        message: sanitise(form.querySelector('[name="message"]') ? form.querySelector('[name="message"]').value : ''),
-                        source:  window.location.pathname
-                    };
-
-                    fetch(GAS_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
-                        .then(function () {
-                            localStorage.setItem(RATE_KEY, Date.now().toString());
-                            sessionStorage.setItem('formSubmitCount', count + 1);
-                            if (successCallback) successCallback();
-                            else { form.reset(); alert('Thank you! we will be in touch shortly.'); }
-                        })
-                        .catch(function () { alert('Something went wrong. Please call us on 07817 938507.'); })
-                        .finally(function () { if (btn) { btn.disabled = false; btn.innerHTML = originalHTML; } });
-                });
-            }
-
-            document.addEventListener('DOMContentLoaded', function () {
-                document.querySelectorAll('form').forEach(function (form) {
-                    handleFormSubmit(form, function () { window.location.href = 'thank-you.html'; });
-                });
-            });
-        })();
-    </script>
 
     <div id="footer-placeholder"></div>
     <script src="global.js"></script>
