@@ -1,7 +1,7 @@
 {
-  "name": "Standfast Fencing",
-  "short_name": "Standfast",
-  "description": "Fencing, gates, decking and garden timbercraft in Norwich and Norfolk.",
+  "name": "Norwich Builders",
+  "short_name": "Norwich Builders",
+  "description": "Kitchens, bathrooms, extensions, renovations and conversions in Norwich and Norfolk.",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -16,7 +16,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#40543C",
+  "theme_color": "#2c3172",
   "background_color": "#F5F3EE",
   "start_url": "/",
   "display": "standalone"

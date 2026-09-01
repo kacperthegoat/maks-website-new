@@ -24,25 +24,6 @@ async function initApp() {
     }
 
     initHeaderScroll();
-
-    // ==========================================
-    // 2. SCROLL REVEAL ANIMATIONS
-    // ==========================================
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        root: null,
-        threshold: 0.1, 
-        rootMargin: "0px 0px -50px 0px"
-    });
-
-    revealElements.forEach(el => revealObserver.observe(el));
 }
 
 if (document.readyState === 'loading') {
@@ -98,13 +79,13 @@ function initHeaderScroll() {
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
                 header.classList.remove('bg-transparent', 'border-transparent');
-                header.classList.add('bg-brand-dark/95', 'backdrop-blur-md', 'shadow-md', 'border-white/10');
+                header.classList.add('bg-brand-navy/95', 'backdrop-blur-md', 'shadow-md', 'border-white/10');
                 container.classList.remove('py-5', 'md:py-6');
                 container.classList.add('py-2', 'md:py-3');
             } else {
                 header.classList.remove('scrolled');
                 header.classList.add('bg-transparent', 'border-transparent');
-                header.classList.remove('bg-brand-dark/95', 'backdrop-blur-md', 'shadow-md', 'border-white/10');
+                header.classList.remove('bg-brand-navy/95', 'backdrop-blur-md', 'shadow-md', 'border-white/10');
                 container.classList.add('py-5', 'md:py-6');
                 container.classList.remove('py-2', 'md:py-3');
             }
