@@ -24,7 +24,7 @@ This is a **content rebuild on the existing layout**, not a rename. The old site
 | Opening hours | Mon–Fri, 8am–5pm |
 | Service area | Norwich and surrounding areas, Norfolk |
 | Domain | https://www.norwichbuilders.co.uk/ |
-| Facebook | **TODO** — client gave two pages, neither confirmed live |
+| Facebook | https://www.facebook.com/p/Norwich-Builders-100068577885824/ — confirmed |
 
 ### Business description — client's own wording, do not rewrite
 
@@ -119,10 +119,9 @@ Generate favicon set, app icons and OG image from the logo. Source stock for fiv
 
 1. **Postcode** — needed for the address and any geo data.
 2. **Publish address or not** — 14 Penrice Road may be Maks's home. Ask before displaying it.
-3. **Facebook page** — which of the two is live.
-4. **About page** — the onboarding form requires it, but Maks asked to remove the "Our Story" button. Keep the page, or fold into the homepage?
-5. **"Free quotes"** — kept in the header bar pending client confirmation.
-6. **Trust badges / credentials** — ask Maks whether he holds any.
+3. **About page** — the onboarding form requires it, but Maks asked to remove the "Our Story" button. Keep the page, or fold into the homepage?
+4. **"Free quotes"** — kept in the header bar pending client confirmation.
+5. **Trust badges / credentials** — ask Maks whether he holds any.
 
 ---
 
