@@ -126,14 +126,14 @@
 ---------------------------------------------------------------------------------------------------- -->
         <!-- Increased top padding (pt-[170px]) to keep text safely below the header with breathing room -->
         <section
-            class="relative bg-[#F5F3EE] flex flex-col lg:min-h-[100svh] pt-[170px] sm:pt-[180px] md:pt-[190px] pb-16 lg:pt-[200px] lg:pb-16 overflow-hidden z-0">
+            class="relative bg-[#F5F3EE] pt-[236px] sm:pt-[262px] md:pt-[220px] lg:pt-[230px] pb-16 lg:pb-24 overflow-hidden z-0">
 
-            <!-- Left Container: Text & CTA -->
-            <div
-                class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 z-10 relative flex-1 flex flex-col justify-center mt-6 lg:mt-0">
+            <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
+                <div class="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-14 xl:gap-20">
 
+                <!-- Text -->
                 <div
-                    class="flex flex-col items-center lg:items-start text-center lg:text-left w-full md:max-w-2xl lg:max-w-[45%] xl:max-w-[45%] sm:pr-8 lg:pr-12 xl:pr-16 mx-auto lg:mx-0">
+                    class="flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:w-[52%] mx-auto lg:mx-0">
 
 
                     <h1
@@ -177,23 +177,22 @@
                         </a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Right Column / Full Screen Edge-to-Edge Slideshow -->
-            <!-- Positioned absolutely on desktop to break out of the container and fill the right screen edge -->
-            <div
-                class="w-full px-4 md:px-8 lg:px-0 mt-12 lg:mt-0 relative lg:absolute lg:top-0 lg:right-0 lg:w-[55%] h-[320px] sm:h-[450px] lg:h-full z-0 lg:[clip-path:polygon(10%_0,100%_0,100%_100%,0_100%)]">
-
-                <div
-                    class="w-full h-full rounded-[2rem] lg:rounded-none overflow-hidden shadow-2xl lg:shadow-none relative">
-                    <div class="relative w-full h-full bg-[#2c3172]">
+                <!-- Photo — portrait. The best finished-room photos in the client's
+                     set are portrait, so the hero is a text/photo split rather than a
+                     wide banner. TO SWAP IN A WIDE SHOT: change aspect-[3/4] to
+                     aspect-[4/3] (or aspect-video) and raise the max-w values. -->
+                <div class="w-full lg:w-[48%] flex justify-center lg:justify-end">
+                    <div
+                        class="relative w-full max-w-[380px] sm:max-w-[440px] lg:max-w-none aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl bg-[#2c3172]">
                         <img src="assets/imgs/hero/hero-home.webp"
-                            alt="Photo to follow &mdash; hero image awaiting the client&rsquo;s choice"
-                            width="1600" height="1200" loading="eager" fetchpriority="high" decoding="async"
+                            alt="A finished bathroom with a freestanding bath, a chrome bath filler set into a recessed niche and a wood-effect floor"
+                            width="1400" height="1865" loading="eager" fetchpriority="high" decoding="async"
                             class="absolute inset-0 w-full h-full object-cover">
                     </div>
                 </div>
 
+                </div>
             </div>
 
         </section>
@@ -250,7 +249,7 @@
                         class="group flex flex-col rounded-3xl overflow-hidden"
                         style="background:#2c3172;">
                         <div class="w-full h-48 sm:h-52 lg:h-48 relative overflow-hidden bg-[#2c3172] shrink-0">
-                            <img src="assets/imgs/services/bathrooms-1.webp" alt="A finished bathroom with a freestanding bath, a chrome bath filler set into a recessed niche and a wood-effect floor" loading="lazy"
+                            <img src="assets/imgs/services/bathrooms-1.webp" alt="A finished shower room with a fluted panel behind the shower, a corner enclosure and large-format floor tiles" loading="lazy"
                                 class="absolute inset-0 w-full h-full object-cover">
                         </div>
                         <div
@@ -400,7 +399,7 @@
                         <div
                             class="relative w-full max-w-sm lg:max-w-none h-[300px] lg:h-[400px] rounded-[1.5rem] overflow-hidden shadow-2xl bg-[#1f2352]">
                             <img src="assets/imgs/general/cta-2.webp"
-                                alt="A finished shower room with a fluted panel behind the shower, a corner enclosure and a close-coupled WC" loading="lazy"
+                                alt="A hallway with a newly laid patterned tile floor with a border, and a painted staircase" loading="lazy"
                                 class="absolute inset-0 w-full h-full object-cover">
                         </div>
                     </div>
