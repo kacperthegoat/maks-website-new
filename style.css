@@ -470,3 +470,32 @@ div[onmouseenter][style*="background:#2c3172"] {
 .badge {
     border-radius: 9999px !important;
 }
+
+/* --Gallery filter bar: fade the edges so a clipped strip reads as swipeable ----*/
+.filter-fade { position: relative; }
+.filter-fade::before,
+.filter-fade::after {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2.25rem;
+    pointer-events: none;
+    z-index: 30;
+}
+.filter-fade::before {
+    left: 1rem;
+    border-top-left-radius: 9999px;
+    border-bottom-left-radius: 9999px;
+    background: linear-gradient(to right, #ffffff 30%, rgba(255,255,255,0));
+}
+.filter-fade::after {
+    right: 1rem;
+    border-top-right-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+    background: linear-gradient(to left, #ffffff 30%, rgba(255,255,255,0));
+}
+@media (min-width: 640px) {
+    .filter-fade::before { left: 0; }
+    .filter-fade::after  { right: 0; }
+}
