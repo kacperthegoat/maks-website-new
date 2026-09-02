@@ -40,7 +40,9 @@
 
 body  { font-family: var(--font-body); background-color: var(--brand-alice); color: var(--brand-text); }
 h1,h2,h3,h4,h5,h6 { font-family: var(--font-heading); }
-img   { filter: saturate(1.485); }
+/* Client project photos are quoted from — keep colour close to true.
+   Anything above ~1.1 shifts tile, worktop and paint finishes. */
+img   { filter: saturate(1.1); }
 
 /* --Before / After Slider --------------------------------------------------*/
 .ba-slider {
@@ -367,7 +369,7 @@ div[onmouseenter][style*="background:#2c3172"] {
     height: auto;
     max-width: 100%;
     display: block;
-    filter: saturate(1.35);
+    filter: saturate(1.1);
 }
 .masonry-overlay {
     position: absolute;
