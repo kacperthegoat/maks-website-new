@@ -489,12 +489,18 @@ div[onmouseenter][style*="background:#2c3172"] {
 }
 
 .service-card-scrim {
-    /* light black wash - 10% over the picture, deepening only under the text */
+    /* Black wash, weighted to the lower half where the heading and copy sit.
+       Strong enough to hold white text over the palest photos. */
     background: linear-gradient(to top,
-        rgba(0, 0, 0, 0.62) 0%,
-        rgba(0, 0, 0, 0.34) 45%,
-        rgba(0, 0, 0, 0.10) 100%);
+        rgba(0, 0, 0, 0.82) 0%,
+        rgba(0, 0, 0, 0.68) 32%,
+        rgba(0, 0, 0, 0.42) 62%,
+        rgba(0, 0, 0, 0.16) 100%);
 }
+
+.service-card h3,
+.services-track > .service-card p,
+.service-card > .relative p { text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55); }
 
 .service-card-actions {
     margin-top: auto;
