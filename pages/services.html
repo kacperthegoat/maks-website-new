@@ -78,7 +78,7 @@
 <!-- 
              CATALOG HEADER & FILTER BAR
          -->
-        <section class="relative pt-[236px] sm:pt-[262px] pb-16 md:pt-52 md:pb-24 flex flex-col items-center overflow-hidden"
+        <section class="relative pt-[152px] sm:pt-[160px] pb-16 md:pt-44 md:pb-24 flex flex-col items-center overflow-hidden"
             style="background:#F5F3EE;">
 
             <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10 relative z-20 flex-grow flex flex-col">
@@ -88,7 +88,7 @@
 
                     <span
                         class="tagline-pill inline-block px-5 py-1.5 font-body font-semibold text-sm tracking-widest uppercase rounded-full mb-6 cursor-default"
-                        style="background:#e5a824; color:#2c3172; transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;">
+                        style="background:#e5a824; color:#000000; transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;">
                         Our Services
                     </span>
 
@@ -112,198 +112,107 @@
                     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full pb-20">
 
                     <!-- Service Card -->
-                    <div id="kitchens" class="service-card kitchens relative bg-white rounded-[2rem] shadow-xl border border-[#2c3172]/5 overflow-hidden flex flex-col h-full"
+                    <div id="kitchens" class="service-card kitchens relative flex flex-col overflow-hidden bg-[#2c3172] rounded-[2rem] shadow-xl min-h-[26rem] md:min-h-[28rem]"
                         style="display: flex;">
-                        <div class="relative w-full h-64 md:h-72 overflow-hidden bg-[#2c3172]">
-                            <img src="../assets/imgs/services/kitchens-1.webp"
-                                alt="A newly fitted kitchen in grey shaker units with leather tab handles, a gas hob and a stainless steel splashback" loading="lazy"
-                                class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#2c3172]/90 via-[#2c3172]/20 to-transparent opacity-70"></div>
-                            <h3 class="absolute bottom-6 left-6 right-6 font-heading text-2xl md:text-3xl font-bold text-white z-10 leading-tight drop-shadow-md">
-                                Kitchens</h3>
+                        <img src="../assets/imgs/services/kitchens-1.webp"
+                            alt="A newly fitted kitchen in grey shaker units with leather tab handles, a gas hob and a stainless steel splashback" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover">
+                        <div class="service-card-scrim absolute inset-0"></div>
+
+                        <div class="relative z-10 flex flex-col justify-end flex-grow p-7 lg:p-8">
+                            <h3 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-3">Kitchens</h3>
+                            <p class="font-body text-white/85 text-sm lg:text-base leading-relaxed">A new kitchen from strip-out to final trim, including the building work around it: moving a wall, closing a doorway, forming a new opening.</p>
                         </div>
 
-                        <div class="p-6 md:p-8 flex flex-col flex-grow bg-white relative z-20">
-                            <p class="font-body text-[#000000]/70 text-base md:text-lg mb-8 flex-grow">
-                                A new kitchen from strip-out to final trim, including the building work around it &mdash; moving a wall, closing a doorway, forming a new opening.</p>
-
-                            <div class="mt-auto flex flex-col gap-3 items-center">
-                                <a href="contact.html" class="btn-bubble btn-primary font-body w-full">
-                                    <span class="btn-bubble-fill"></span>
-                                    <span class="btn-bubble-text text-base">Get My Quote</span>
-                                    <span class="btn-bubble-icon-container">
-                                        <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14m-6-6l6 6-6 6"></path>
-                                        </svg>
-                                    </span>
-                                </a>
-                                <a href="services/kitchens.html" class="btn-bubble btn-green font-body mx-auto">
-                                    <span class="btn-bubble-fill"></span>
-                                    <span class="btn-bubble-text text-base">View Details</span>
-                                    <span class="btn-bubble-icon-container">
-                                        <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14m-6-6l6 6-6 6"></path>
-                                        </svg>
-                                    </span>
-                                </a>
-                            </div>
+                        <div class="service-card-actions relative z-10">
+                            <a href="contact.html"
+                                class="service-card-btn service-card-btn-solid font-body">Get in Touch</a>
+                            <a href="services/kitchens.html"
+                                class="service-card-btn service-card-btn-ghost font-body">Learn More</a>
                         </div>
                     </div>
 
                     <!-- Service Card -->
-                    <div id="bathrooms" class="service-card bathrooms relative bg-white rounded-[2rem] shadow-xl border border-[#2c3172]/5 overflow-hidden flex flex-col h-full"
+                    <div id="bathrooms" class="service-card bathrooms relative flex flex-col overflow-hidden bg-[#2c3172] rounded-[2rem] shadow-xl min-h-[26rem] md:min-h-[28rem]"
                         style="display: flex;">
-                        <div class="relative w-full h-64 md:h-72 overflow-hidden bg-[#2c3172]">
-                            <img src="../assets/imgs/services/bathrooms-1.webp"
-                                alt="A finished shower room with a fluted panel behind the shower, a corner enclosure and large-format floor tiles" loading="lazy"
-                                class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#2c3172]/90 via-[#2c3172]/20 to-transparent opacity-70"></div>
-                            <h3 class="absolute bottom-6 left-6 right-6 font-heading text-2xl md:text-3xl font-bold text-white z-10 leading-tight drop-shadow-md">
-                                Bathrooms</h3>
+                        <img src="../assets/imgs/services/bathrooms-1.webp"
+                            alt="A finished shower room with a fluted panel behind the shower, a corner enclosure and large-format floor tiles" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover">
+                        <div class="service-card-scrim absolute inset-0"></div>
+
+                        <div class="relative z-10 flex flex-col justify-end flex-grow p-7 lg:p-8">
+                            <h3 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-3">Bathrooms</h3>
+                            <p class="font-body text-white/85 text-sm lg:text-base leading-relaxed">Bathrooms, en-suites and shower rooms. Old suite out, layout and pipework set out, new suite, tiling and flooring in.</p>
                         </div>
 
-                        <div class="p-6 md:p-8 flex flex-col flex-grow bg-white relative z-20">
-                            <p class="font-body text-[#000000]/70 text-base md:text-lg mb-8 flex-grow">
-                                Bathrooms, en-suites and shower rooms. Old suite out, layout and pipework set out, new suite, tiling and flooring in.</p>
-
-                            <div class="mt-auto flex flex-col gap-3 items-center">
-                                <a href="contact.html" class="btn-bubble btn-primary font-body w-full">
-                                    <span class="btn-bubble-fill"></span>
-                                    <span class="btn-bubble-text text-base">Get My Quote</span>
-                                    <span class="btn-bubble-icon-container">
-                                        <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14m-6-6l6 6-6 6"></path>
-                                        </svg>
-                                    </span>
-                                </a>
-                                <a href="services/bathrooms.html" class="btn-bubble btn-green font-body mx-auto">
-                                    <span class="btn-bubble-fill"></span>
-                                    <span class="btn-bubble-text text-base">View Details</span>
-                                    <span class="btn-bubble-icon-container">
-                                        <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14m-6-6l6 6-6 6"></path>
-                                        </svg>
-                                    </span>
-                                </a>
-                            </div>
+                        <div class="service-card-actions relative z-10">
+                            <a href="contact.html"
+                                class="service-card-btn service-card-btn-solid font-body">Get in Touch</a>
+                            <a href="services/bathrooms.html"
+                                class="service-card-btn service-card-btn-ghost font-body">Learn More</a>
                         </div>
                     </div>
 
                     <!-- Service Card -->
-                    <div id="extensions" class="service-card extensions relative bg-white rounded-[2rem] shadow-xl border border-[#2c3172]/5 overflow-hidden flex flex-col h-full"
+                    <div id="extensions" class="service-card extensions relative flex flex-col overflow-hidden bg-[#2c3172] rounded-[2rem] shadow-xl min-h-[26rem] md:min-h-[28rem]"
                         style="display: flex;">
-                        <div class="relative w-full h-64 md:h-72 overflow-hidden bg-[#2c3172]">
-                            <img src="../assets/imgs/services/extensions-1.webp"
-                                alt="Blockwork and brickwork walls rising at the rear of a house, with a cement mixer and wheelbarrow on site" loading="lazy"
-                                class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#2c3172]/90 via-[#2c3172]/20 to-transparent opacity-70"></div>
-                            <h3 class="absolute bottom-6 left-6 right-6 font-heading text-2xl md:text-3xl font-bold text-white z-10 leading-tight drop-shadow-md">
-                                Extensions</h3>
+                        <img src="../assets/imgs/services/extensions-1.webp"
+                            alt="A pair of newly built brick houses with pitched roofs, bay windows and a block-paved drive" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover">
+                        <div class="service-card-scrim absolute inset-0"></div>
+
+                        <div class="relative z-10 flex flex-col justify-end flex-grow p-7 lg:p-8">
+                            <h3 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-3">Extensions</h3>
+                            <p class="font-body text-white/85 text-sm lg:text-base leading-relaxed">Single-storey and two-storey extensions. Foundations, brickwork, roof, windows and doors, then the inside finished.</p>
                         </div>
 
-                        <div class="p-6 md:p-8 flex flex-col flex-grow bg-white relative z-20">
-                            <p class="font-body text-[#000000]/70 text-base md:text-lg mb-8 flex-grow">
-                                Single-storey and two-storey extensions. Foundations, brickwork, roof, windows and doors, then the inside finished.</p>
-
-                            <div class="mt-auto flex flex-col gap-3 items-center">
-                                <a href="contact.html" class="btn-bubble btn-primary font-body w-full">
-                                    <span class="btn-bubble-fill"></span>
-                                    <span class="btn-bubble-text text-base">Get My Quote</span>
-                                    <span class="btn-bubble-icon-container">
-                                        <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14m-6-6l6 6-6 6"></path>
-                                        </svg>
-                                    </span>
-                                </a>
-                                <a href="services/extensions.html" class="btn-bubble btn-green font-body mx-auto">
-                                    <span class="btn-bubble-fill"></span>
-                                    <span class="btn-bubble-text text-base">View Details</span>
-                                    <span class="btn-bubble-icon-container">
-                                        <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14m-6-6l6 6-6 6"></path>
-                                        </svg>
-                                    </span>
-                                </a>
-                            </div>
+                        <div class="service-card-actions relative z-10">
+                            <a href="contact.html"
+                                class="service-card-btn service-card-btn-solid font-body">Get in Touch</a>
+                            <a href="services/extensions.html"
+                                class="service-card-btn service-card-btn-ghost font-body">Learn More</a>
                         </div>
                     </div>
 
                     <!-- Service Card -->
-                    <div id="renovations" class="service-card renovations relative bg-white rounded-[2rem] shadow-xl border border-[#2c3172]/5 overflow-hidden flex flex-col h-full"
+                    <div id="renovations" class="service-card renovations relative flex flex-col overflow-hidden bg-[#2c3172] rounded-[2rem] shadow-xl min-h-[26rem] md:min-h-[28rem]"
                         style="display: flex;">
-                        <div class="relative w-full h-64 md:h-72 overflow-hidden bg-[#2c3172]">
-                            <img src="../assets/imgs/services/renovations-1.webp"
-                                alt="A renovated room painted in two tones with a dado rail, new skirting and a new wood-effect floor" loading="lazy"
-                                class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#2c3172]/90 via-[#2c3172]/20 to-transparent opacity-70"></div>
-                            <h3 class="absolute bottom-6 left-6 right-6 font-heading text-2xl md:text-3xl font-bold text-white z-10 leading-tight drop-shadow-md">
-                                Renovations</h3>
+                        <img src="../assets/imgs/services/renovations-1.webp"
+                            alt="A renovated interior with exposed brickwork, a timber-framed opening and a dining table under pendant lights" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover">
+                        <div class="service-card-scrim absolute inset-0"></div>
+
+                        <div class="relative z-10 flex flex-col justify-end flex-grow p-7 lg:p-8">
+                            <h3 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-3">Renovations</h3>
+                            <p class="font-body text-white/85 text-sm lg:text-base leading-relaxed">Whole-house and room-by-room renovation. Stripped back, put right and finished: walls, floors, joinery and decoration.</p>
                         </div>
 
-                        <div class="p-6 md:p-8 flex flex-col flex-grow bg-white relative z-20">
-                            <p class="font-body text-[#000000]/70 text-base md:text-lg mb-8 flex-grow">
-                                Whole-house and room-by-room renovation. Stripped back, put right, and finished &mdash; walls, floors, joinery and decoration.</p>
-
-                            <div class="mt-auto flex flex-col gap-3 items-center">
-                                <a href="contact.html" class="btn-bubble btn-primary font-body w-full">
-                                    <span class="btn-bubble-fill"></span>
-                                    <span class="btn-bubble-text text-base">Get My Quote</span>
-                                    <span class="btn-bubble-icon-container">
-                                        <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14m-6-6l6 6-6 6"></path>
-                                        </svg>
-                                    </span>
-                                </a>
-                                <a href="services/renovations.html" class="btn-bubble btn-green font-body mx-auto">
-                                    <span class="btn-bubble-fill"></span>
-                                    <span class="btn-bubble-text text-base">View Details</span>
-                                    <span class="btn-bubble-icon-container">
-                                        <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14m-6-6l6 6-6 6"></path>
-                                        </svg>
-                                    </span>
-                                </a>
-                            </div>
+                        <div class="service-card-actions relative z-10">
+                            <a href="contact.html"
+                                class="service-card-btn service-card-btn-solid font-body">Get in Touch</a>
+                            <a href="services/renovations.html"
+                                class="service-card-btn service-card-btn-ghost font-body">Learn More</a>
                         </div>
                     </div>
 
                     <!-- Service Card -->
-                    <div id="conversions" class="service-card conversions relative bg-white rounded-[2rem] shadow-xl border border-[#2c3172]/5 overflow-hidden flex flex-col h-full"
+                    <div id="conversions" class="service-card conversions relative flex flex-col overflow-hidden bg-[#2c3172] rounded-[2rem] shadow-xl min-h-[26rem] md:min-h-[28rem]"
                         style="display: flex;">
-                        <!-- TODO(assets): placeholder card image — assets/imgs/services/conversions-placeholder.webp -->
-                        <div class="relative w-full h-64 md:h-72 overflow-hidden bg-[#2c3172]">
-                            <img src="../assets/imgs/services/conversions-placeholder.webp"
-                                alt="Photo to follow &mdash; awaiting conversion project photos from the client" loading="lazy"
-                                class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#2c3172]/90 via-[#2c3172]/20 to-transparent opacity-70"></div>
-                            <h3 class="absolute bottom-6 left-6 right-6 font-heading text-2xl md:text-3xl font-bold text-white z-10 leading-tight drop-shadow-md">
-                                Conversions</h3>
+                        <img src="../assets/imgs/services/conversions-2.webp"
+                            alt="A loft conversion finished as a bedroom, with a sloped ceiling, roof windows and a wood floor" loading="lazy"
+                            class="absolute inset-0 w-full h-full object-cover">
+                        <div class="service-card-scrim absolute inset-0"></div>
+
+                        <div class="relative z-10 flex flex-col justify-end flex-grow p-7 lg:p-8">
+                            <h3 class="font-heading text-2xl lg:text-3xl font-bold text-white mb-3">Conversions</h3>
+                            <p class="font-body text-white/85 text-sm lg:text-base leading-relaxed">Loft, garage and outbuilding conversions. Floor structure, insulation, stairs, windows and the full internal finish.</p>
                         </div>
 
-                        <div class="p-6 md:p-8 flex flex-col flex-grow bg-white relative z-20">
-                            <p class="font-body text-[#000000]/70 text-base md:text-lg mb-8 flex-grow">
-                                Loft, garage and outbuilding conversions. Floor structure, insulation, stairs, windows and the full internal finish.</p>
-
-                            <div class="mt-auto flex flex-col gap-3 items-center">
-                                <a href="contact.html" class="btn-bubble btn-primary font-body w-full">
-                                    <span class="btn-bubble-fill"></span>
-                                    <span class="btn-bubble-text text-base">Get My Quote</span>
-                                    <span class="btn-bubble-icon-container">
-                                        <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14m-6-6l6 6-6 6"></path>
-                                        </svg>
-                                    </span>
-                                </a>
-                                <a href="services/conversions.html" class="btn-bubble btn-green font-body mx-auto">
-                                    <span class="btn-bubble-fill"></span>
-                                    <span class="btn-bubble-text text-base">View Details</span>
-                                    <span class="btn-bubble-icon-container">
-                                        <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14m-6-6l6 6-6 6"></path>
-                                        </svg>
-                                    </span>
-                                </a>
-                            </div>
+                        <div class="service-card-actions relative z-10">
+                            <a href="contact.html"
+                                class="service-card-btn service-card-btn-solid font-body">Get in Touch</a>
+                            <a href="services/conversions.html"
+                                class="service-card-btn service-card-btn-ghost font-body">Learn More</a>
                         </div>
                     </div>
 
@@ -312,69 +221,56 @@
         </section>
 
 
-        <!-- 
-             BOTTOM CTA
-         -->
-        <section
-            class="relative py-20 flex items-center justify-center text-white overflow-hidden border-t border-white/5"
-            style="background:#2c3172;">
-            <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
-                <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 w-full">
+        <!-- ----------------------------------------------------------------------------------------------------
+             GOOGLE REVIEW SECTION - QR to the Norwich Builders Google Business Profile
+        ---------------------------------------------------------------------------------------------------- -->
+        <section class="relative py-20 lg:py-28 overflow-hidden" style="background:#F5F3EE;">
+            <div class="w-full max-w-[80rem] mx-auto px-4 sm:px-8 lg:px-12">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
-                    <div
-                        class="w-full lg:w-3/12 order-2 lg:order-1 flex justify-center lg:justify-start">
-                        <div
-                            class="relative w-full max-w-sm lg:max-w-none h-[300px] lg:h-[400px] rounded-[2rem] overflow-hidden shadow-2xl border-2 border-white/10 group">
-                            <img src="../assets/imgs/services/renovations-2.webp"
-                                alt="A room stripped back during renovation, with a freshly plastered wall, exposed blockwork and first-fix pipework" loading="lazy"
-                                class="absolute inset-0 w-full h-full object-cover">
-                        </div>
+                    <div class="w-full lg:w-1/2 flex flex-col items-center text-center">
+                        <svg class="w-10 h-10 mb-4" viewBox="0 0 48 48" aria-hidden="true">
+                            <path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-2.7-.4-4H24v7.3h12.1c-.2 1.9-1.6 4.9-4.5 6.9l6.9 5.4c4.1-3.8 6.6-9.4 6.6-15.6z"/>
+                            <path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.3l-6.9-5.4c-1.9 1.3-4.4 2.2-7.6 2.2-5.8 0-10.7-3.8-12.5-9.1l-7.1 5.5C8.1 41.1 15.4 46 24 46z"/>
+                            <path fill="#FBBC05" d="M11.5 28.4c-.5-1.4-.7-2.9-.7-4.4s.3-3 .7-4.4l-7.1-5.5C2.9 17 2 20.4 2 24s.9 7 2.4 9.9l7.1-5.5z"/>
+                            <path fill="#EA4335" d="M24 10.2c4.1 0 6.9 1.8 8.5 3.3l6.2-6C34.9 4 29.9 2 24 2 15.4 2 8.1 6.9 4.4 14.1l7.1 5.5C13.3 14.3 18.2 10.2 24 10.2z"/>
+                        </svg>
+                        <p class="font-body text-lg sm:text-xl font-semibold tracking-widest uppercase text-[#000000] mb-8">
+                            Scan to review on Google
+                        </p>
+                        <img src="../assets/imgs/general/google-review-qr.svg"
+                            alt="QR code linking to the Norwich Builders profile on Google Maps"
+                            width="530" height="530" loading="lazy"
+                            class="w-full max-w-[300px] h-auto">
                     </div>
 
-                    <div
-                        class="w-full lg:w-6/12 text-center order-1 lg:order-2 flex flex-col items-center">
-
-                        <span
-                            class="tagline-pill inline-block px-5 py-1.5 font-body font-semibold text-sm tracking-widest uppercase rounded-full mb-6 cursor-default pill-dark-bg"
-                            style="background:#e5a824; color:#2c3172; transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;">
-                            Ready to Get Started?
+                    <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
+                        <span class="tagline-pill inline-block px-5 py-1.5 font-body font-bold text-sm tracking-widest uppercase rounded-full mb-6 cursor-default"
+                            style="background:#e5a824; color:#000000;">
+                            Happy with our work?
                         </span>
 
-                        <h2
-                            class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-4">
-                            Get a Quote Today
+                        <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-[#000000] leading-tight mb-6">
+                            Leave Us a Google Review
                         </h2>
 
-                        <p class="font-body text-base sm:text-lg md:text-xl mb-10 max-w-md mx-auto leading-relaxed mt-2"
-                            style="color:rgba(255,255,255,0.80);">
-                            Contact us directly or fill in our online form. We cover Norwich and the surrounding areas
-                            with no obligation and no hidden costs.
+                        <span class="block w-24 h-0.5 bg-[#e5a824] mb-8"></span>
+
+                        <p class="font-body text-lg md:text-xl text-[#000000]/70 leading-relaxed max-w-xl mb-10">
+                            Your feedback helps other homeowners in Norwich and Norfolk find a builder they can
+                            trust. It takes less than a minute and means a lot to us.
                         </p>
 
-                        <a href="contact.html" class="btn-bubble btn-dark-bg font-body">
-                            <span class="btn-bubble-fill"></span>
-                            <span class="btn-bubble-text">Contact Us Now</span>
-                            <span class="btn-bubble-icon-container">
-                                <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                        d="M5 12h14m-6-6l6 6-6 6"></path>
-                                </svg>
-                            </span>
+                        <a href="https://maps.google.com/?cid=14340383533896799532" target="_blank" rel="noopener"
+                            class="btn-bubble btn-primary font-body">
+                            <span class="btn-bubble-text">Write a Review</span>
                         </a>
                     </div>
 
-                    <div class="hidden lg:flex w-full lg:w-3/12 order-3 justify-center lg:justify-end mt-0 lg:mt-16">
-                        <div
-                            class="relative w-full max-w-sm lg:max-w-none h-[300px] lg:h-[400px] rounded-[2rem] overflow-hidden shadow-2xl border-2 border-white/10 group">
-                            <img src="../assets/imgs/services/extensions-2.webp"
-                                alt="Footings dug out at the rear of a brick bungalow, with bricks, blocks and a spirit level ready on site" loading="lazy"
-                                class="absolute inset-0 w-full h-full object-cover">
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
+
 
     </main>
 

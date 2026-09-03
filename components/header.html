@@ -7,15 +7,9 @@
         transform: none !important;
     }
 
-    .locked-top-bar {
+    #header-container {
         padding-top: 0.5rem !important;
         padding-bottom: 0.5rem !important;
-        min-height: auto !important;
-    }
-
-    #header-container {
-        padding-top: 0.85rem !important;
-        padding-bottom: 0.85rem !important;
         min-height: auto !important;
     }
 
@@ -29,38 +23,14 @@
     class="fixed w-full top-0 left-0 z-50 text-white shadow-lg flex flex-col border-b border-white/10"
     style="background:#2c3172;">
 
-    <!-- 1. Trust Banner (Top Bar) -->
-
-    <!-- DESKTOP TOP BAR (Hidden on Mobile/Tablet) -->
-    <div
-        class="locked-top-bar hidden xl:flex w-full bg-white/5 border-b border-white/5 px-4 lg:px-8 xl:px-12 items-center py-0 text-[13px] font-medium tracking-wide text-white justify-between">
-
-            <!-- TODO(client): social links removed with the old client. Add Norwich Builders' own Facebook/Instagram URL here when supplied. -->
-            <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-[#e5a824]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg><span class="text-white">Norwich &amp; Norfolk</span></div>
-            <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-[#e5a824]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-white">Mon&ndash;Fri, 8am&ndash;5pm</span></div>
-            <a href="mailto:norwichbuilders@hotmail.com" class="flex items-center gap-1.5 min-h-[44px] py-2 hover:text-[#e5a824] transition-colors"><svg class="w-3.5 h-3.5 text-[#e5a824]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg><span class="text-white">norwichbuilders@hotmail.com</span></a>
-            <a href="tel:+447817938507" class="flex items-center gap-1.5 min-h-[44px] py-2 hover:text-[#e5a824] transition-colors"><svg class="w-3.5 h-3.5 text-[#e5a824]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg><span class="text-white">07817 938507</span></a>
-    </div>
-
-    <!-- MOBILE/TABLET TOP BAR (Hidden on Desktop) — static, no marquee -->
-    <div
-        class="locked-top-bar flex xl:hidden w-full bg-white/5 border-b border-white/5 py-0 px-4 overflow-hidden text-[13px] font-medium tracking-wide text-white">
-        <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 w-full">
-            <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 shrink-0 text-[#e5a824]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg><span class="text-white hover:text-inherit">Norwich &amp; Norfolk</span></div>
-            <div class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 shrink-0 text-[#e5a824]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-white hover:text-inherit">Mon&ndash;Fri, 8am&ndash;5pm</span></div>
-            <a href="mailto:norwichbuilders@hotmail.com" class="hidden sm:flex items-center gap-1.5 min-h-[44px] py-2 hover:text-[#e5a824] transition-colors"><svg class="w-3.5 h-3.5 shrink-0 text-[#e5a824]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg><span class="text-white hover:text-inherit">norwichbuilders@hotmail.com</span></a>
-            <a href="tel:+447817938507" class="flex items-center gap-1.5 min-h-[44px] py-2 hover:text-[#e5a824] transition-colors"><svg class="w-3.5 h-3.5 shrink-0 text-[#e5a824]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg><span class="text-white hover:text-inherit">07817 938507</span></a>
-        </div>
-    </div>
-
     <!-- 2. Main Navigation -->
     <div id="header-container"
-        class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 flex justify-between items-center">
+        class="w-full max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
 
         <!-- Logo -->
         <a href="/index.html"
             class="relative flex items-center">
-            <div class="logo-wrapper relative w-[170px] md:w-[180px] lg:w-[200px]">
+            <div class="logo-wrapper relative w-[130px] md:w-[140px] lg:w-[150px]">
                 <img src="/assets/imgs/logo.png" alt="Norwich Builders"
                     class="w-full h-auto object-contain"
                     width="1672" height="941" fetchpriority="high">
@@ -68,7 +38,10 @@
         </a>
 
         <!-- Desktop Nav -->
-        <nav class="hidden xl:flex items-center gap-8 font-body text-[17px] font-semibold tracking-wide">
+        <nav class="hidden xl:flex items-center gap-6 font-body text-[15px] font-semibold tracking-wide">
+            <a href="/index.html"
+                class="inline-block whitespace-nowrap transition-all duration-150 hover:text-[#e5a824]">Home</a>
+
             <!-- Services Dropdown -->
             <div class="relative group/nav">
                 <a href="/pages/services.html"
@@ -142,6 +115,9 @@
         <div
             class="bg-[#2c3172] border border-white/10 shadow-2xl rounded-2xl overflow-hidden max-h-[80vh] overflow-y-auto">
             <div class="flex flex-col px-6 py-6 space-y-4 text-center font-body text-white">
+
+                <a href="/index.html"
+                    class="inline-block py-2 text-lg font-medium hover:text-[#e5a824] transition-all duration-150">Home</a>
 
                 <div class="border-y border-white/10 py-4 my-2 flex flex-col items-center">
                     <button onclick="document.getElementById('mobileServicesPanel').classList.toggle('hidden')"

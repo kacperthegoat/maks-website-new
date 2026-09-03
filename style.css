@@ -1,12 +1,12 @@
 /* ============================================================
-   Norwich Builders — Global Stylesheet
+   Norwich Builders - Global Stylesheet
 
    Building firm covering Norwich and the surrounding areas of
    Norfolk. Kitchens, bathrooms, extensions, renovations and
    conversions.
 
    Brand: navy #2c3172 (dominant), navy-deep #1f2352,
-          gold #e5a824 (accent only — buttons, links, small
+          gold #e5a824 (accent only - buttons, links, small
           highlights; never large fills or section backgrounds).
    Type:  Timeless Bold (headings), DM Sans (body).
 
@@ -40,7 +40,7 @@
 
 body  { font-family: var(--font-body); background-color: var(--brand-alice); color: var(--brand-text); }
 h1,h2,h3,h4,h5,h6 { font-family: var(--font-heading); }
-/* Client project photos are quoted from — keep colour close to true.
+/* Client project photos are quoted from - keep colour close to true.
    Anything above ~1.1 shifts tile, worktop and paint finishes. */
 img   { filter: saturate(1.1); }
 
@@ -88,7 +88,7 @@ span[style*="background:#2c3172"] {
 }
 span[style*="background:#2c3172"]:hover {
     background: #e5a824 !important;
-    color: #FFFFFF !important;
+    color: #000000 !important;
     box-shadow: 0 4px 16px rgba(232, 176, 30, 0.30);
 }
 
@@ -109,144 +109,62 @@ div[onmouseenter][style*="background:#2c3172"] {
 .hide-scrollbar::-webkit-scrollbar { display: none; }
 .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* --Global Button Component: Bubble Fill --------------------------------------------------*/
-.btn-bubble {
+/* --Global Button Component: flat square gold ------------------------------------------------
+   One treatment sitewide: a square gold block with a black, letter-spaced label.
+   The old bubble-fill circle and arrow icon are hidden rather than removed from the
+   markup, so every existing .btn-bubble across the site picks this up unchanged. */
+.btn-bubble,
+.btn-primary,
+.btn-secondary,
+.btn-light,
+.btn-dark-bg,
+.btn-outline,
+.btn-green {
     position: relative;
     display: inline-flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    justify-content: center;
+    padding: 0.95rem 2.25rem;
     font-family: inherit;
     font-weight: 700;
-    font-size: 1.125rem;
-    border-radius: 9999px;
-    overflow: hidden;
-    transition: transform 0.5s ease;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    border-radius: 0;
+    background-color: var(--brand-gold);
+    color: #000000;
+    border: none;
+    box-shadow: none;
     cursor: pointer;
-    box-shadow: 0 4px 14px rgba(44, 49, 114, 0.05);
-}
-.btn-bubble:hover {
-    transform: scale(1.05);
+    transition: background-color 0.25s ease;
 }
 
-.btn-bubble-fill {
-    position: absolute;
-    right: 0.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 9999px;
-    transition: transform 0.7s cubic-bezier(0.19,1,0.22,1);
-    z-index: 0;
+.btn-bubble:hover,
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-light:hover,
+.btn-dark-bg:hover,
+.btn-outline:hover,
+.btn-green:hover {
+    background-color: #c98d18;
+    color: #000000;
 }
-.btn-bubble:hover .btn-bubble-fill {
-    transform: translateY(-50%) scale(25);
+
+/* Legacy bubble internals - no longer part of the design. */
+.btn-bubble-fill,
+.btn-bubble-icon-container,
+.btn-bubble-icon {
+    display: none !important;
 }
 
 .btn-bubble-text {
     position: relative;
     z-index: 10;
-    transition: color 0.5s ease;
+    color: #000000;
+    padding: 0 !important;
+    white-space: nowrap;
 }
 
-.btn-bubble-icon-container {
-    position: relative;
-    z-index: 10;
-    width: 2.5rem;
-    height: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 9999px;
-    flex-shrink: 0;
-    transition: background-color 0.5s ease;
-}
-.btn-bubble-icon {
-    width: 1.25rem;
-    height: 1.25rem;
-    transform: rotate(-45deg);
-    transition: transform 0.5s ease-in-out;
-}
-.btn-bubble:hover .btn-bubble-icon {
-    transform: rotate(0deg);
-}
-
-/* All button variants share one treatment: gold face with a navy label (5.57:1),
-   and a navy circle that expands to fill the button on hover, at which point the
-   label flips to white on navy (11.74:1). Both states meet WCAG AA. */
-.btn-primary,
-.btn-secondary,
-.btn-light,
-.btn-dark-bg,
-.btn-outline {
-    background-color: var(--brand-gold);
-    color: #2c3172;
-    border: none;
-}
-.btn-primary .btn-bubble-fill,
-.btn-secondary .btn-bubble-fill,
-.btn-light .btn-bubble-fill,
-.btn-dark-bg .btn-bubble-fill,
-.btn-outline .btn-bubble-fill {
-    background-color: var(--brand-navy);
-}
-.btn-primary .btn-bubble-text,
-.btn-secondary .btn-bubble-text,
-.btn-light .btn-bubble-text,
-.btn-dark-bg .btn-bubble-text,
-.btn-outline .btn-bubble-text {
-    color: #2c3172;
-}
-.btn-primary:hover .btn-bubble-text,
-.btn-secondary:hover .btn-bubble-text,
-.btn-light:hover .btn-bubble-text,
-.btn-dark-bg:hover .btn-bubble-text,
-.btn-outline:hover .btn-bubble-text {
-    color: #FFFFFF;
-}
-.btn-primary .btn-bubble-icon,
-.btn-secondary .btn-bubble-icon,
-.btn-light .btn-bubble-icon,
-.btn-dark-bg .btn-bubble-icon,
-.btn-outline .btn-bubble-icon {
-    color: #2c3172;
-}
-.btn-primary:hover .btn-bubble-icon,
-.btn-secondary:hover .btn-bubble-icon,
-.btn-light:hover .btn-bubble-icon,
-.btn-dark-bg:hover .btn-bubble-icon,
-.btn-outline:hover .btn-bubble-icon {
-    color: #FFFFFF;
-}
-.btn-primary .btn-bubble-icon-container,
-.btn-secondary .btn-bubble-icon-container,
-.btn-light .btn-bubble-icon-container,
-.btn-dark-bg .btn-bubble-icon-container,
-.btn-outline .btn-bubble-icon-container {
-    background-color: transparent;
-}
-
-/* Solid navy button variant: navy face, deeper navy arrow circle, white label (11.74:1) */
-.btn-green {
-    background-color: var(--brand-navy);
-    color: #FFFFFF;
-    border: none;
-}
-.btn-green .btn-bubble-fill {
-    background-color: var(--brand-navy-hover);
-}
-.btn-green .btn-bubble-text,
-.btn-green:hover .btn-bubble-text {
-    color: #FFFFFF;
-}
-.btn-green .btn-bubble-icon {
-    color: #FFFFFF;
-}
-.btn-green .btn-bubble-icon-container {
-    background-color: var(--brand-navy-hover);
-}
 
 @media (max-width: 768px) {
     #site-header a.group\/logo > div {
@@ -257,15 +175,9 @@ div[onmouseenter][style*="background:#2c3172"] {
     .btn-bubble {
         width: auto !important;
         max-width: 80vw !important;
-        padding: 0.35rem 0.35rem 0.35rem 1.25rem !important;
-        font-size: 1rem !important;
+        padding: 0.85rem 1.75rem !important;
+        font-size: 0.95rem !important;
         justify-content: center !important;
-    }
-    
-    .btn-bubble-icon-container,
-    .btn-bubble-fill {
-        width: 2.25rem !important;
-        height: 2.25rem !important;
     }
 
     main section h1,
@@ -347,17 +259,17 @@ div[onmouseenter][style*="background:#2c3172"] {
 }
 
 #all-projects-grid {
-    column-count: 1;
-    column-gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.5rem;
 }
-@media (min-width: 480px)  { #all-projects-grid { column-count: 2; } }
-@media (min-width: 1024px) { #all-projects-grid { column-count: 3; } }
-@media (min-width: 1280px) { #all-projects-grid { column-count: 4; } }
+@media (min-width: 480px)  { #all-projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { #all-projects-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1280px) { #all-projects-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 
 .masonry-item {
-    break-inside: avoid;
-    margin-bottom: 1rem;
     position: relative;
+    aspect-ratio: 4 / 3;
     border-radius: 1.25rem;
     overflow: hidden;
     cursor: zoom-in;
@@ -366,35 +278,23 @@ div[onmouseenter][style*="background:#2c3172"] {
 }
 .masonry-item img {
     width: 100%;
-    height: auto;
+    height: 100%;
     max-width: 100%;
     display: block;
-    filter: saturate(1.1);
+    object-fit: cover;
+    object-position: center;
 }
-.masonry-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(44,49,114,0.88) 0%, transparent 55%);
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out;
-    display: flex;
-    align-items: flex-end;
-    padding: 1rem;
-}
-@media (hover: hover) {
-    .masonry-item:hover .masonry-overlay { opacity: 1; }
-}
-
 .gallery-item {
     display: block;
     width: 100%;
     position: relative;
     overflow: hidden;
     border-radius: 2rem;
+    aspect-ratio: 4 / 3;
 }
 .gallery-item img {
     width: 100%;
-    height: auto;
+    height: 100%;
     max-width: 100%;
     object-fit: cover;
     object-position: center;
@@ -446,7 +346,7 @@ div[onmouseenter][style*="background:#2c3172"] {
     mix-blend-mode: multiply;
 }
 /* ==========================================================================
-   Square corners — site-wide
+   Square corners - site-wide
    Zeroes every corner radius: Tailwind `rounded-*` utilities, the component
    styles above, and any radius set in per-page <style> blocks. Kept as a
    single sweep rather than stripping ~370 `rounded-*` classes by hand, so
@@ -458,11 +358,8 @@ div[onmouseenter][style*="background:#2c3172"] {
     border-radius: 0 !important;
 }
 
-/* Exceptions to the square-corner sweep above: buttons and taglines keep
+/* Exceptions to the square-corner sweep above: taglines and pills keep
    their original pill radius. Everything else stays square. */
-.btn-bubble,
-.btn-bubble-fill,
-.btn-bubble-icon-container,
 .service-pill,
 .tagline-pill,
 .pill-dark-bg,
@@ -498,4 +395,142 @@ div[onmouseenter][style*="background:#2c3172"] {
 @media (min-width: 640px) {
     .filter-fade::before { left: 0; }
     .filter-fade::after  { right: 0; }
+}
+
+/* --Homepage service cards ---------------------------------------------------
+   Photo card with the copy sitting over the image and a two-button bar across
+   the foot. Square corners, no motion: the only hover is a colour change. */
+
+
+/* The services section pins to the viewport while the row of cards travels
+   sideways, so every service passes the visitor before the page moves on.
+   Height is set by script from the actual overflow; without script it is a
+   normal auto-height section with a swipeable row. */
+.services-pin { position: relative; }
+.services-pin-inner {
+    position: sticky;
+    top: 0;
+    height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* top padding clears the fixed header while the panel is pinned */
+    padding: 5.5rem 0 1.5rem;
+}
+/* The whole panel has to fit one screen while it is pinned, so the heading
+   block and the cards are sized against viewport height rather than fixed. */
+.services-pin-inner > div { max-width: 112rem; padding-left: 2rem; padding-right: 2rem; }
+.services-pin-inner .services-heading { margin-bottom: clamp(0.75rem, 2.5vh, 2.5rem); }
+.services-pin-inner > div { max-width: 112rem; padding-left: 2rem; padding-right: 2rem; }
+.services-pin-inner .services-heading h2 { font-size: clamp(2.25rem, 4.6vh, 3.75rem); margin-bottom: 0.5rem; }
+.services-pin-inner > div { max-width: 112rem; padding-left: 2rem; padding-right: 2rem; }
+.services-pin-inner .services-heading p  { font-size: clamp(0.95rem, 2vh, 1.125rem); margin-top: 0.5rem; }
+@media (prefers-reduced-motion: reduce) {
+    .services-pin { height: auto !important; }
+    .services-pin-inner { position: static; min-height: 0; }
+}
+
+/* ----------------------------------------------------------------------------
+   Homepage services rail
+   One line of cards. Horizontal position is driven entirely by page scroll:
+   scrolling down moves them right-to-left, scrolling up moves them back.
+   Nothing moves on its own - there is no timer and no autoplay.
+---------------------------------------------------------------------------- */
+.services-rail {
+    --rail-gap: 2rem;
+    --rail-w: min(100vw - 4rem, 112rem);
+    /* Swipeable by default so the last cards are always reachable even if the
+       scroll script never runs; the script switches this to hidden. */
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 4%, #000 96%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0, #000 4%, #000 96%, transparent 100%);
+}
+.services-rail::-webkit-scrollbar { display: none; }
+.services-rail.is-scroll-linked { overflow-x: hidden; }
+.services-track {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--rail-gap);
+    width: max-content;
+    will-change: transform;
+}
+.services-track > .service-card {
+    flex: 0 0 auto;
+    /* Exactly three cards across the container, as wide as the row allows. */
+    width: calc((var(--rail-w) - 2 * var(--rail-gap)) / 3);
+    /* As tall as the screen can hold while the panel is pinned, up to 38rem. */
+    height: clamp(22rem, calc(100svh - 22.5rem), 38rem);
+    border-radius: 0;
+}
+@media (max-width: 1023px) { .services-track > .service-card { width: calc((var(--rail-w) - var(--rail-gap)) / 2); } }
+@media (max-width: 639px)  { .services-track > .service-card { width: var(--rail-w); } }
+
+/* Very short screens (landscape phones, small laptops): scale the heading back
+   so the panel still fits one screen while pinned. */
+@media (max-height: 680px) {
+    .services-pin-inner { padding: 4.5rem 0 1rem; }
+    .services-pin-inner > div { max-width: 112rem; padding-left: 2rem; padding-right: 2rem; }
+.services-pin-inner .services-heading h2 { font-size: 2.5rem; line-height: 1.1; }
+    .services-pin-inner > div { max-width: 112rem; padding-left: 2rem; padding-right: 2rem; }
+.services-pin-inner .services-heading p  { font-size: 1rem; }
+}
+
+/* No scroll coupling for anyone who has asked for reduced motion -
+   the rail becomes a plain swipeable row instead. */
+@media (prefers-reduced-motion: reduce) {
+    .services-rail {
+    --rail-gap: 2rem;
+    --rail-w: min(100vw - 4rem, 112rem); overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+    .services-track { transform: none !important; }
+}
+
+.service-card-scrim {
+    /* light black wash - 10% over the picture, deepening only under the text */
+    background: linear-gradient(to top,
+        rgba(0, 0, 0, 0.62) 0%,
+        rgba(0, 0, 0, 0.34) 45%,
+        rgba(0, 0, 0, 0.10) 100%);
+}
+
+.service-card-actions {
+    margin-top: auto;
+    padding: 1.35rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.28);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+}
+.service-card-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.95rem 0.75rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    text-align: center;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.service-card-btn-solid {
+    background-color: #ffffff;
+    color: #1f2352;
+}
+.service-card-btn-solid:hover {
+    background-color: var(--brand-gold);
+    color: #000000;
+}
+
+.service-card-btn-ghost {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+}
+.service-card-btn-ghost:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
 }

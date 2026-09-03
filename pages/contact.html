@@ -81,11 +81,11 @@
 <!-- Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
              HERO
         Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â -->
-        <section class="relative pt-[236px] sm:pt-[262px] md:pt-[220px] lg:pt-[230px] pb-20 md:pb-32 flex items-center justify-center overflow-hidden" style="background:#2c3172;">
+        <section class="relative pt-[152px] sm:pt-[160px] md:pt-[144px] lg:pt-[148px] pb-20 md:pb-32 flex items-center justify-center overflow-hidden" style="background:#2c3172;">
             <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10 relative z-20 text-center text-white flex flex-col items-center">
 
                 <span class="tagline-pill inline-block px-5 py-1.5 font-body font-semibold text-sm tracking-widest uppercase rounded-full mb-6 cursor-default pill-dark-bg"
-                    style="background:#e5a824; color:#2c3172;">
+                    style="background:#e5a824; color:#000000;">
                     Get In Touch
                 </span>
 
@@ -185,7 +185,7 @@
                                 var PAGE_LOAD = Date.now();
                                 /* !!! ACTION REQUIRED BEFORE LAUNCH !!!
                                    Paste the Web3Forms access key for norwichbuilders@hotmail.com below.
-                                   Get it free at https://web3forms.com — no account needed, the key is
+                                   Get it free at https://web3forms.com - no account needed, the key is
                                    emailed to the inbox it delivers to. Until it is set, the form refuses
                                    to submit and tells the visitor to call or email instead. */
                                 var ACCESS_KEY = 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY';
@@ -220,20 +220,20 @@
                                         e.preventDefault();
                                         clearError();
 
-                                        // 1. Honeypot — bots fill hidden field
+                                        // 1. Honeypot - bots fill hidden field
                                         var bot = document.getElementById('botcheck');
                                         if (bot && bot.value !== '') {
                                             window.location.href = 'thank-you.html';
                                             return;
                                         }
 
-                                        // 2. Time check — humans take > 3s to fill a form
+                                        // 2. Time check - humans take > 3s to fill a form
                                         if (Date.now() - PAGE_LOAD < 3000) {
                                             showError('Form submitted too quickly. Please try again.');
                                             return;
                                         }
 
-                                        // 3. Rate limit — once per hour via localStorage
+                                        // 3. Rate limit - once per hour via localStorage
                                         var lastSub = parseInt(localStorage.getItem(RATE_KEY) || '0');
                                         if (Date.now() - lastSub < RATE_MS) {
                                             var mins = Math.ceil((RATE_MS - (Date.now() - lastSub)) / 60000);
@@ -252,7 +252,7 @@
                                         if (emailVal && !validateEmail(emailVal)) { showError('Please enter a valid email address.'); return; }
                                         if (messageVal.length < 10) { showError('Please provide more detail about your project.'); return; }
 
-                                        // 5. Endpoint not configured yet — fail loudly rather than silently losing the lead
+                                        // 5. Endpoint not configured yet - fail loudly rather than silently losing the lead
                                         if (ACCESS_KEY.indexOf('REPLACE_WITH') === 0) {
                                             showError('The enquiry form is not live yet. Please call 07817 938507 or email norwichbuilders@hotmail.com.');
                                             return;
@@ -450,7 +450,7 @@
 
                 <div class="flex flex-col items-center text-center mb-12">
                     <span class="tagline-pill inline-block px-5 py-1.5 font-body font-semibold text-sm tracking-widest uppercase rounded-full mb-6 cursor-default"
-                        style="background:#e5a824; color:#2c3172;">
+                        style="background:#e5a824; color:#000000;">
                         Service Coverage
                     </span>
                     <h2 class="group font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] font-bold text-[#000000] leading-tight flex flex-col items-center cursor-default w-full">
@@ -462,9 +462,9 @@
                     </p>
                 </div>
 
-                <!-- Service area list — static, wraps -->
-                <div class="mb-12">
-                    <div id="area-list" class="flex flex-wrap justify-center gap-3 py-2"></div>
+                <!-- Service area list - static, wraps -->
+                <div class="mb-12 area-carousel" id="area-carousel">
+                    <div id="area-list" class="area-track"></div>
                 </div>
 
                 <div class="flex flex-col gap-5 xl:gap-8 w-full">
@@ -477,7 +477,7 @@
                         <div id="service-map" class="w-full h-full z-0 relative"></div>
                         <script>
                             document.addEventListener('DOMContentLoaded', () => {
-                                // Norwich city centre — a public geographic reference point used only to frame
+                                // Norwich city centre - a public geographic reference point used only to frame
                                 // the map. It is NOT the business address and no address is pinned here.
                                 const norwichLat = 52.6309;
                                 const norwichLng = 1.2974;
@@ -490,13 +490,14 @@
                                     markerZoomAnimation: false
                                 }).setView([norwichLat, norwichLng], 10);
 
-                                L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-                                    attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
-                                    subdomains: 'abcd',
+                                // OpenStreetMap standard tiles - free, no API key, no account.
+                                // (CARTO's basemaps now watermark every tile with "API KEY REQUIRED".)
+                                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
                                     maxZoom: 19
                                 }).addTo(map);
 
-                                // Shaded service area — no marker, no pinned address
+                                // Shaded service area - no marker, no pinned address
                                 const serviceRadius = L.circle([norwichLat, norwichLng], {
                                     color: '#e5a824',
                                     weight: 2,
@@ -513,7 +514,7 @@
                 </div>
 
                 <p class="font-body text-sm text-center mt-5" style="color:rgba(44,49,114,0.55);">
-                    Indicative coverage across Norwich and the surrounding areas. We work on site at your property &mdash; this is a service area, not a shop or office.
+                    Indicative coverage across Norwich and the surrounding areas. We work on site at your property, this is a service area, not a shop or office.
                 </p>
 
                 <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
@@ -553,6 +554,32 @@
                 user-select: none;
             }
             .area-pill svg { flex-shrink: 0; }
+
+            /* Continuous location carousel. Hover slows it to a crawl. */
+            .area-carousel {
+                overflow: hidden;
+                padding: 2px 0;
+                -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+                        mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+            }
+            .area-track {
+                display: flex;
+                width: max-content;
+                gap: 12px;
+                animation: area-scroll 60s linear infinite;
+            }
+            .area-carousel:hover .area-track,
+            .area-carousel:focus-within .area-track {
+                animation-duration: 240s;
+            }
+            @keyframes area-scroll {
+                from { transform: translateX(0); }
+                to   { transform: translateX(-50%); }
+            }
+            @media (prefers-reduced-motion: reduce) {
+                .area-carousel { overflow-x: auto; }
+                .area-track { animation: none; }
+            }
         </style>
 
         <script>
@@ -584,7 +611,13 @@
 
             var list = document.getElementById('area-list');
             if (!list) return;
+            // Rendered twice so the -50% scroll loops seamlessly.
             towns.forEach(function(town) { list.appendChild(makePill(town)); });
+            towns.forEach(function(town) {
+                var pill = makePill(town);
+                pill.setAttribute('aria-hidden', 'true');
+                list.appendChild(pill);
+            });
         })();
         </script>
 
@@ -598,8 +631,8 @@
 
                     <div class="w-full lg:w-1/2">
                         <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl group" style="border: 2px solid #F5F3EE;">
-                            <img src="../assets/imgs/general/contact-cta.webp"
-                                alt="A renovated room painted in two tones with a dado rail, new skirting and a new wood-effect floor"
+                            <img src="../assets/imgs/services/renovations-1.webp"
+                                alt="A renovated interior with exposed brickwork, a timber-framed opening and a dining table under pendant lights"
                                 loading="lazy"
                                 class="w-full h-80 md:h-[500px] lg:h-[600px] object-cover">
                         </div>
@@ -608,7 +641,7 @@
                     <div class="w-full lg:w-1/2 flex flex-col items-center text-center lg:items-start lg:text-left">
 
                         <span class="tagline-pill inline-block px-5 py-1.5 font-body font-semibold text-sm tracking-widest uppercase rounded-full mb-6 cursor-default"
-                            style="background:#e5a824; color:#2c3172;">
+                            style="background:#e5a824; color:#000000;">
                             Still Have Questions?
                         </span>
 
