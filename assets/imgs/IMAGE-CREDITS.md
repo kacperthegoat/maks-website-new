@@ -16,7 +16,7 @@ real project photography.
 | services/bathrooms-3.webp | pexels-artbovich-6890406.jpg | Pexels |
 | services/extensions-1.webp | james-feaver-glO8JbrAj5k-unsplash.jpg | Unsplash |
 | services/extensions-2.webp | brett-jordan-PFr50OBMowU-unsplash.jpg | Unsplash |
-| services/renovations-1.webp | francesca-knall-7D8LoBYHBJI-unsplash.jpg | Unsplash |
+| services/renovations-1.webp | untitled folder/597.webp (client-supplied) | client photo |
 | services/extensions-3.webp | elise-brown-IVDp_OeDlYk-unsplash.jpg | Unsplash |
 | services/renovations-2.webp | elise-brown--TBeL9BIWF0-unsplash.jpg | Unsplash |
 | services/renovations-3.webp | gennifer-miller-Mb_r0CIDFh8-unsplash.jpg | Unsplash |
@@ -28,8 +28,15 @@ real project photography.
 All were centre-cropped to the layout's aspect ratio, saturation +1.1 to match the sitewide
 pass, and saved as WebP at quality 82.
 
-The contact page CTA now reuses `services/renovations-1.webp` (the same photo as the homepage),
-so the unattributed `untitled folder/597.webp` is no longer used anywhere on the site.
+`services/renovations-1.webp` was replaced on 2026-09-11 at the client's request: the old
+image (francesca-knall-7D8LoBYHBJI, a stripped-back room with rubble) looked poor. The new
+one is cropped from `untitled folder/597.webp`, a client-supplied photo of a restored period
+hallway with a mosaic tiled floor. It is used on the homepage, the services index, the gallery
+and the renovations service page. The contact-page CTA that also used it has been removed.
+
+`services/conversions-1.webp` (the studwork/garage-opening photo) was removed from the
+conversions **service page** the same day, again at the client's request. It remains only as
+the small card thumbnail on the homepage, services index and gallery.
 
 
 ## Conversions
