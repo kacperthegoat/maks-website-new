@@ -56,3 +56,20 @@ on the wall - a security brand, not a competing builder.
 
 `general/photo-to-follow.webp` is a brand placeholder generated in-house, kept in the repo
 for any future slot awaiting client photography.
+
+## 2026-09-11 round 2
+
+- Homepage and the "Everything We Build" grid on pages/services.html now show finished
+  work only. Extensions cards point at `extensions-3.webp` (finished rear extension);
+  conversions cards use `general/photo-to-follow.webp` because no finished-conversion
+  stock photo exists in the pool (all three finished loft interiors were deleted when
+  loft conversions were dropped, and the rest of the pool is kitchens, bathrooms,
+  exteriors or construction sites). Client conversion photos are pending.
+- The studwork/scaffolding shot `conversions-1.webp` (source brett-jordan-yica25Tg73w)
+  now appears only on the conversions service page and the gallery - not in any
+  homepage or services-index card.
+- All absolute asset URLs (og:image, twitter:image, JSON-LD image + logo) were
+  repointed from https://www.norwichbuilders.co.uk/assets/ to
+  https://maks-website-new.vercel.app/assets/ so social/link previews resolve against
+  the live deployment. Canonical and og:url still point at norwichbuilders.co.uk and
+  must stay that way; revert the asset URLs too once that domain serves this build.
