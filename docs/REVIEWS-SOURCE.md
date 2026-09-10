@@ -68,14 +68,16 @@ Owner reply: "Many thanks. Hope kids like new playroom."
 
 ---
 
-## Outstanding
+## Google Business Profile — confirmed 2026-09-11
 
-**"Read the full review on Google" links are not on the page yet.** They need one canonical Google
-Business Profile URL. The codebase currently holds two unmatched identifiers, neither verified:
+Verified against the owner's own Google Maps URL. Both identifiers already in the codebase are
+correct and point at the same listing:
 
-- `maps.google.com/?cid=14340383533896799532` — the QR image and the "Write a Review" buttons on
-  index, about, services and testimonials
-- `place_id:ChIJGVQlQKNjjKsRLJXHcNhGA8c` — `sameAs` in the JSON-LD on index
+- CID `14340383533896799532` (hex `0xc70346d870c7952c`) — QR image + "Write a Review" buttons
+  on index, about, services and testimonials. No regeneration needed; already correct.
+- place_id `ChIJGVQlQKNjjKsRLJXHcNhGA8c` — `sameAs` in the JSON-LD on index.
+- KG feature id `/g/11t2cm26z3`.
 
-When the correct URL is confirmed it must be updated in **all** of those places, and the QR image
-regenerated, because the URL is encoded into the QR pattern itself.
+The three testimonial cards each link to the all-reviews page:
+`https://search.google.com/local/reviews?placeid=ChIJGVQlQKNjjKsRLJXHcNhGA8c`
+Google exposes no per-review deep link, so all three use the same URL.
