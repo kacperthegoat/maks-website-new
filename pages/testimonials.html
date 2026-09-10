@@ -88,12 +88,11 @@
              places text has been cut. The full untrimmed originals are kept in
              docs/REVIEWS-SOURCE.md so any excerpt here can be checked against its source.
 
-             TODO(client): "Read the full review on Google" links are deliberately NOT here
-             yet. They need one canonical Google Business Profile URL, which is still being
-             verified - the codebase currently holds two unmatched identifiers
-             (cid=14340383533896799532 and place_id=ChIJGVQlQKNjjKsRLJXHcNhGA8c).
-             When the URL is confirmed, add the link under each card AND update the four
-             existing places plus the QR image, which encodes the URL in its pattern.
+             Each card links to the Google reviews page for the confirmed Business Profile:
+             search.google.com/local/reviews?placeid=ChIJGVQlQKNjjKsRLJXHcNhGA8c
+             (same listing as cid=14340383533896799532 - verified 2026-09-11 against the
+             owner's own Google Maps URL). Google does not expose per-review deep links,
+             so all three point at the same all-reviews page.
 
              No aggregateRating or review markup on this page: Google's guidelines disallow
              structured data for reviews collected on a third-party platform.
@@ -117,9 +116,16 @@
                                 about the ongoing job and always clarifies any uncertain details, he is punctual,
                                 extremely tidy &hellip;&rdquo;</p>
                         </blockquote>
-                        <figcaption class="mt-6 pt-6 border-t border-[#2c3172]/10 flex items-center gap-3">
-                            <span class="font-heading text-xl font-bold text-[#000000]">Anika</span>
-                            <span class="text-sm text-[#000000]/55">Google review</span>
+                        <figcaption class="mt-6 pt-6 border-t border-[#2c3172]/10">
+                            <div class="flex items-center gap-3">
+                                <span class="font-heading text-xl font-bold text-[#000000]">Anika</span>
+                                <span class="text-sm text-[#000000]/55">Google review</span>
+                            </div>
+                            <a href="https://search.google.com/local/reviews?placeid=ChIJGVQlQKNjjKsRLJXHcNhGA8c" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center gap-1.5 mt-2 text-sm font-semibold text-[#2c3172] hover:text-[#e5a824] transition-colors duration-150">
+                                Read the full review on Google
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+                            </a>
                         </figcaption>
                     </figure>
 
@@ -133,9 +139,16 @@
                                 building regs through to decorating. The end result was lovely and during the process
                                 Max often looked for ways to improve the final appearance, off of his own back.&rdquo;</p>
                         </blockquote>
-                        <figcaption class="mt-6 pt-6 border-t border-[#2c3172]/10 flex items-center gap-3">
-                            <span class="font-heading text-xl font-bold text-[#000000]">Chris</span>
-                            <span class="text-sm text-[#000000]/55">Google review</span>
+                        <figcaption class="mt-6 pt-6 border-t border-[#2c3172]/10">
+                            <div class="flex items-center gap-3">
+                                <span class="font-heading text-xl font-bold text-[#000000]">Chris</span>
+                                <span class="text-sm text-[#000000]/55">Google review</span>
+                            </div>
+                            <a href="https://search.google.com/local/reviews?placeid=ChIJGVQlQKNjjKsRLJXHcNhGA8c" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center gap-1.5 mt-2 text-sm font-semibold text-[#2c3172] hover:text-[#e5a824] transition-colors duration-150">
+                                Read the full review on Google
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+                            </a>
                         </figcaption>
                     </figure>
 
@@ -149,9 +162,16 @@
                                 mile with advice and cost saving ideas. Max is a fantastic person who really cares about
                                 his work. I would not hesitate to recommend this company.&rdquo;</p>
                         </blockquote>
-                        <figcaption class="mt-6 pt-6 border-t border-[#2c3172]/10 flex items-center gap-3">
-                            <span class="font-heading text-xl font-bold text-[#000000]">Peter</span>
-                            <span class="text-sm text-[#000000]/55">Google review</span>
+                        <figcaption class="mt-6 pt-6 border-t border-[#2c3172]/10">
+                            <div class="flex items-center gap-3">
+                                <span class="font-heading text-xl font-bold text-[#000000]">Peter</span>
+                                <span class="text-sm text-[#000000]/55">Google review</span>
+                            </div>
+                            <a href="https://search.google.com/local/reviews?placeid=ChIJGVQlQKNjjKsRLJXHcNhGA8c" target="_blank" rel="noopener noreferrer"
+                                class="inline-flex items-center gap-1.5 mt-2 text-sm font-semibold text-[#2c3172] hover:text-[#e5a824] transition-colors duration-150">
+                                Read the full review on Google
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+                            </a>
                         </figcaption>
                     </figure>
 

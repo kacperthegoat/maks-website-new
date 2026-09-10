@@ -122,12 +122,11 @@ Generate favicon set, app icons and OG image from the logo. Source stock for fiv
 ## Outstanding — blocking
 
 1. **Postcode** — still needed. Contact page shows `[POSTCODE TODO]`; `postalCode` absent from schema.
-2. **Google Business Profile URL** — two different identifiers are in the codebase and neither is
-   verified: `cid=14340383533896799532` (QR + "Write a Review" buttons) and
-   `place_id:ChIJGVQlQKNjjKsRLJXHcNhGA8c` (`sameAs`). One canonical URL is needed before the
-   testimonials page can link to it. Blocking Testimonials.
-3. **Three review texts** — we hold summaries only. Excerpts must be pasted verbatim; a quotation
-   cannot be drafted from a summary and attributed to a named person. Blocking Testimonials.
+2. **Google Business Profile URL** — RESOLVED 2026-09-11. CID 14340383533896799532 /
+   place_id ChIJGVQlQKNjjKsRLJXHcNhGA8c confirmed against the owner's Google Maps URL.
+   Testimonial cards link to search.google.com/local/reviews?placeid=<place_id>.
+3. **Three review texts** — RESOLVED. Anika, Chris and Peter supplied verbatim on
+   2026-09-11 and added as attributed excerpts; full originals in docs/REVIEWS-SOURCE.md.
 4. **About page text** — client is supplying it verbatim. His list names seven services against the
    site's five ("Home Refurbishments" and "General Building Work" are extra); agency is raising the
    mismatch with him rather than resolving it in the build.
