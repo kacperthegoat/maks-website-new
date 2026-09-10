@@ -34,7 +34,18 @@ so the unattributed `untitled folder/597.webp` is no longer used anywhere on the
 
 ## Conversions
 
-All four conversion photos were removed on 2026-09-10: three showed loft conversions,
-which are no longer a service the site offers, and one contained two identifiable people.
-Every conversion slot now uses `general/photo-to-follow.webp`, a brand placeholder generated
-in-house, until the client supplies his own project photography.
+All four original conversion photos were removed on 2026-09-10: three showed loft
+conversions, which are no longer a service the site offers, and one contained two
+identifiable people.
+
+| File | Source | Licence |
+|---|---|---|
+| services/conversions-1.webp | brett-jordan-yica25Tg73w-unsplash.jpg | Unsplash |
+
+The replacement shows a garage opening being framed out in studwork and boarded over,
+which matches the revised copy ("wall structure", no loft). Checked at full resolution
+first: no people, no number plates, no house number. It does carry a small ADT alarm box
+on the wall - a security brand, not a competing builder.
+
+`general/photo-to-follow.webp` is a brand placeholder generated in-house, kept in the repo
+for any future slot awaiting client photography.

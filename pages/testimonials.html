@@ -82,32 +82,84 @@
             </div>
         </section>
 
-        <!-- Content Section -->
+        <!-- Reviews
+             Every quotation below is verbatim from the customer's own Google review.
+             Words have not been changed, reordered or added; an ellipsis marks the only
+             places text has been cut. The full untrimmed originals are kept in
+             docs/REVIEWS-SOURCE.md so any excerpt here can be checked against its source.
+
+             TODO(client): "Read the full review on Google" links are deliberately NOT here
+             yet. They need one canonical Google Business Profile URL, which is still being
+             verified - the codebase currently holds two unmatched identifiers
+             (cid=14340383533896799532 and place_id=ChIJGVQlQKNjjKsRLJXHcNhGA8c).
+             When the URL is confirmed, add the link under each card AND update the four
+             existing places plus the QR image, which encodes the URL in its pattern.
+
+             No aggregateRating or review markup on this page: Google's guidelines disallow
+             structured data for reviews collected on a third-party platform.
+             No star graphics either - only Anika's review states a star count. -->
         <section class="bg-brand-alice flex-grow py-16 md:py-24">
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 font-body text-center">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 font-body">
 
-                <!--
-                  TODO(content): three customer reviews go here - Anika, Chris and Peter.
-                  BLOCKED on two things, both of which must come from the client, not from us:
-                    1. The reviews' actual wording. We hold summaries only; writing a quotation
-                       from a summary would mean inventing words and attributing them to a real,
-                       named person. Excerpts must be pasted verbatim and then trimmed, not drafted.
-                    2. One canonical Google Business Profile URL for the "Read the full review on
-                       Google" links. Two different identifiers are currently in the codebase
-                       (a cid= link and a place_id= link) and neither has been verified as this
-                       client's listing.
-                  No aggregateRating or review schema on this page: Google's guidelines disallow
-                  markup for reviews collected on a third-party platform.
-                -->
+                <div class="flex flex-col gap-8 md:gap-10">
 
-                <p class="text-lg md:text-xl text-[#000000]/70 leading-relaxed">
-                    Our customer reviews are being added to this page shortly.
-                </p>
+                    <!-- Anika -->
+                    <figure class="bg-white rounded-[2rem] shadow-xl border border-[#2c3172]/5 p-8 md:p-10">
+                        <svg class="w-9 h-9 mb-5" style="color:#e5a824;" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M7.17 6A5.17 5.17 0 002 11.17V18h6.83v-6.83H5.5A1.67 1.67 0 017.17 9.5V6zm9.66 0a5.17 5.17 0 00-5.17 5.17V18h6.83v-6.83h-3.33A1.67 1.67 0 0116.83 9.5V6z"/>
+                        </svg>
+                        <blockquote class="text-lg md:text-xl text-[#000000]/80 leading-relaxed">
+                            <p class="mb-4">&ldquo;Max converted our pantry into a great looking toilet, installed a lovely
+                                new family bathroom &hellip; added a cold water tap to the outside of the house &hellip;
+                                removed the last remaining lead pipe from our home &hellip; all in all for Max
+                                &lsquo;nothing is impossible&rsquo;.&rdquo;</p>
+                            <p>&ldquo;On top of all of this Max is a pleasure to have around, keeps good communication
+                                about the ongoing job and always clarifies any uncertain details, he is punctual,
+                                extremely tidy &hellip;&rdquo;</p>
+                        </blockquote>
+                        <figcaption class="mt-6 pt-6 border-t border-[#2c3172]/10 flex items-center gap-3">
+                            <span class="font-heading text-xl font-bold text-[#000000]">Anika</span>
+                            <span class="text-sm text-[#000000]/55">Google review</span>
+                        </figcaption>
+                    </figure>
 
-                <p class="text-base text-[#000000]/60 leading-relaxed mt-4">
-                    In the meantime, you are welcome to
-                    <a href="contact.html" class="font-semibold underline underline-offset-4 decoration-2 decoration-[#e5a824] hover:text-[#e5a824] transition-colors duration-150">get in touch</a>
-                    and we will happily talk you through recent work.
+                    <!-- Chris -->
+                    <figure class="bg-white rounded-[2rem] shadow-xl border border-[#2c3172]/5 p-8 md:p-10">
+                        <svg class="w-9 h-9 mb-5" style="color:#e5a824;" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M7.17 6A5.17 5.17 0 002 11.17V18h6.83v-6.83H5.5A1.67 1.67 0 017.17 9.5V6zm9.66 0a5.17 5.17 0 00-5.17 5.17V18h6.83v-6.83h-3.33A1.67 1.67 0 0116.83 9.5V6z"/>
+                        </svg>
+                        <blockquote class="text-lg md:text-xl text-[#000000]/80 leading-relaxed">
+                            <p>&ldquo;Norwich builders did a garage conversion for me. They covered everything from
+                                building regs through to decorating. The end result was lovely and during the process
+                                Max often looked for ways to improve the final appearance, off of his own back.&rdquo;</p>
+                        </blockquote>
+                        <figcaption class="mt-6 pt-6 border-t border-[#2c3172]/10 flex items-center gap-3">
+                            <span class="font-heading text-xl font-bold text-[#000000]">Chris</span>
+                            <span class="text-sm text-[#000000]/55">Google review</span>
+                        </figcaption>
+                    </figure>
+
+                    <!-- Peter -->
+                    <figure class="bg-white rounded-[2rem] shadow-xl border border-[#2c3172]/5 p-8 md:p-10">
+                        <svg class="w-9 h-9 mb-5" style="color:#e5a824;" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M7.17 6A5.17 5.17 0 002 11.17V18h6.83v-6.83H5.5A1.67 1.67 0 017.17 9.5V6zm9.66 0a5.17 5.17 0 00-5.17 5.17V18h6.83v-6.83h-3.33A1.67 1.67 0 0116.83 9.5V6z"/>
+                        </svg>
+                        <blockquote class="text-lg md:text-xl text-[#000000]/80 leading-relaxed">
+                            <p>&ldquo;Norwich builders are a first class company and we&rsquo;re prepared to go the extra
+                                mile with advice and cost saving ideas. Max is a fantastic person who really cares about
+                                his work. I would not hesitate to recommend this company.&rdquo;</p>
+                        </blockquote>
+                        <figcaption class="mt-6 pt-6 border-t border-[#2c3172]/10 flex items-center gap-3">
+                            <span class="font-heading text-xl font-bold text-[#000000]">Peter</span>
+                            <span class="text-sm text-[#000000]/55">Google review</span>
+                        </figcaption>
+                    </figure>
+
+                </div>
+
+                <p class="text-sm text-[#000000]/55 leading-relaxed mt-10 text-center">
+                    Reviews left by customers on Google. Quotations are shortened; an ellipsis marks
+                    where text has been cut.
                 </p>
 
             </div>
