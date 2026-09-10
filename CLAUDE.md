@@ -20,11 +20,12 @@ This is a **content rebuild on the existing layout**, not a rename. The old site
 | Phone (display) | 07817 938507 |
 | Phone (href) | `tel:+447817938507` |
 | WhatsApp | `https://wa.me/447817938507` |
-| Address | 14 Penrice Road, Norwich — **postcode TODO** |
+| Address | 14 Penrice Road, Norwich — **postcode TODO**. Client has confirmed the street address may be published; it is live on the contact page and in `streetAddress`. |
 | Opening hours | Mon–Fri, 8am–5pm |
 | Service area | Norwich and surrounding areas, Norfolk |
 | Domain | https://www.norwichbuilders.co.uk/ |
 | Facebook | https://www.facebook.com/p/Norwich-Builders-100068577885824/ — confirmed |
+| Instagram | https://www.instagram.com/norwich_builders_uk/ — client-supplied 2026-09-10 |
 
 ### Business description — client's own wording, do not rewrite
 
@@ -49,7 +50,9 @@ Kitchens · Bathrooms · Extensions · Renovations · Conversions
 
 - Contact details, addresses, postcodes, geo coordinates
 - Certifications, licences, memberships (CSCS, TrustMark, FMB, waste carrier licence, Gas Safe, NICEIC). None are confirmed. Trust badge slots stay empty.
-- Years in business, number of employees, jobs completed, founding date
+- Number of employees, jobs completed, founding date
+- Years in business, **except** where the client supplies the figure himself. He has now
+  supplied "Over 20 Years of Building Experience" for the About page; that goes in as written.
 - Reviews, ratings, testimonials
 - `aggregateRating`, `review`, `priceRange`, `foundingDate`, `numberOfEmployees` in schema — omit all of these
 
@@ -57,7 +60,8 @@ Kitchens · Bathrooms · Extensions · Renovations · Conversions
 
 **Never reuse the old client's private infrastructure.** The Google Apps Script webhook in `pages/process_form.html` is Nick's live lead endpoint feeding his Sheet. Delete it; do not repoint it.
 
-**No motion.** The client's most specific complaint. No carousels, marquees, scroll-reveal, parallax, animated counters, autoplay video. Delete unused motion components rather than leaving them in the codebase.
+**No motion.** The client's most specific complaint. (The last moving component, the contact-page
+service-area pill carousel, went with the map on 2026-09-10.) No carousels, marquees, scroll-reveal, parallax, animated counters, autoplay video. Delete unused motion components rather than leaving them in the codebase.
 
 **No stock photography of the wrong kind.** The client *has* asked us to supply stock images chosen to suit each service — that is in scope. Use royalty-free UK residential building work, warm and natural, no obviously American housing. List source and licence per image. Ten Unsplash photos are in `~/Downloads` as candidates.
 
@@ -117,11 +121,24 @@ Generate favicon set, app icons and OG image from the logo. Source stock for fiv
 
 ## Outstanding — blocking
 
-1. **Postcode** — needed for the address and any geo data.
-2. **Publish address or not** — 14 Penrice Road may be Maks's home. Ask before displaying it.
-3. **About page** — the onboarding form requires it, but Maks asked to remove the "Our Story" button. Keep the page, or fold into the homepage?
-4. **"Free quotes"** — kept in the header bar pending client confirmation.
+1. **Postcode** — still needed. Contact page shows `[POSTCODE TODO]`; `postalCode` absent from schema.
+2. **Google Business Profile URL** — two different identifiers are in the codebase and neither is
+   verified: `cid=14340383533896799532` (QR + "Write a Review" buttons) and
+   `place_id:ChIJGVQlQKNjjKsRLJXHcNhGA8c` (`sameAs`). One canonical URL is needed before the
+   testimonials page can link to it. Blocking Testimonials.
+3. **Three review texts** — we hold summaries only. Excerpts must be pasted verbatim; a quotation
+   cannot be drafted from a summary and attributed to a named person. Blocking Testimonials.
+4. **About page text** — client is supplying it verbatim. His list names seven services against the
+   site's five ("Home Refurbishments" and "General Building Work" are extra); agency is raising the
+   mismatch with him rather than resolving it in the build.
 5. **Trust badges / credentials** — ask Maks whether he holds any.
+
+### Resolved 2026-09-10
+- **Publish address** — yes, client confirmed. Now on the contact page and in `streetAddress`.
+- **"Free quotes"** — confirmed by the client; restored to the hero copy and all six quote buttons
+  ("Get Your Free Quote"). This reverses commit 1772a8e.
+- **Homepage intro paragraph** — the client supplied his own hero wording, which supersedes the
+  singular/plural "time-served tradesman" line. That paragraph and its TODO-CONFIRM are gone.
 
 ---
 
@@ -135,7 +152,16 @@ From Maks's email, already agreed:
 - Bathrooms copy: cut "tanked before tiled" and "tiled dead level"
 - Add conversions to the homepage
 - Services page intro — "Kitchens, bathrooms, extensions, renovations and conversions carried out across Norfolk."
-- Homepage intro paragraph — **await my wording**; the client's own draft was grammatically broken and I am confirming the fix with him
+- Homepage intro paragraph — **supplied 2026-09-10**, in place verbatim:
+  "Building & Renovation Specialists in Norwich & Norfolk. / Quality Workmanship. Reliable Service.
+  Built to Last. / Planning a project? Get in touch today for a free, no-obligation quote."
+- Nav order — Home, About Us, Services, Gallery, Testimonials, Contact
+- Top bar reinstated — phone and email top right, static, with Facebook and Instagram
+- Loft conversions removed from the site entirely: "loft"→"room", "floor structure"→"wall
+  structure", "stairs" deleted. All four conversion photos deleted with them (three were lofts, one
+  contained identifiable people); every slot now uses `general/photo-to-follow.webp`
+- Contact "Where We Work" section and the Leaflet map deleted; Location now carries the address and
+  opening hours
 
 ---
 

@@ -18,9 +18,6 @@ real project photography.
 | services/extensions-2.webp | brett-jordan-PFr50OBMowU-unsplash.jpg | Unsplash |
 | services/renovations-1.webp | francesca-knall-7D8LoBYHBJI-unsplash.jpg | Unsplash |
 | services/extensions-3.webp | elise-brown-IVDp_OeDlYk-unsplash.jpg | Unsplash |
-| services/conversions-2.webp | alex-tyson-depNuP0bocM-unsplash.jpg | Unsplash |
-| services/conversions-3.webp | annie-spratt-ap3cdB8iY1k-unsplash.jpg | Unsplash |
-| services/conversions-4.webp | umit-yildirim-toA2b43cCGM-unsplash.jpg | Unsplash |
 | services/renovations-2.webp | elise-brown--TBeL9BIWF0-unsplash.jpg | Unsplash |
 | services/renovations-3.webp | gennifer-miller-Mb_r0CIDFh8-unsplash.jpg | Unsplash |
 | general/about-1.webp | brett-jordan-Zs9vage-0AM-unsplash.jpg | Unsplash |
@@ -33,3 +30,11 @@ pass, and saved as WebP at quality 82.
 
 The contact page CTA now reuses `services/renovations-1.webp` (the same photo as the homepage),
 so the unattributed `untitled folder/597.webp` is no longer used anywhere on the site.
+
+
+## Conversions
+
+All four conversion photos were removed on 2026-09-10: three showed loft conversions,
+which are no longer a service the site offers, and one contained two identifiable people.
+Every conversion slot now uses `general/photo-to-follow.webp`, a brand placeholder generated
+in-house, until the client supplies his own project photography.

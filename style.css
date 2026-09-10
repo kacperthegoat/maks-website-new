@@ -446,8 +446,6 @@ div[onmouseenter][style*="background:#2c3172"] {
     overflow-y: hidden;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 4%, #000 96%, transparent 100%);
-            mask-image: linear-gradient(to right, transparent 0, #000 4%, #000 96%, transparent 100%);
 }
 .services-rail::-webkit-scrollbar { display: none; }
 .services-rail.is-scroll-linked { overflow-x: hidden; }
@@ -482,20 +480,18 @@ div[onmouseenter][style*="background:#2c3172"] {
 /* No scroll coupling for anyone who has asked for reduced motion -
    the rail becomes a plain swipeable row instead. */
 @media (prefers-reduced-motion: reduce) {
-    .services-rail {
-    --rail-gap: 2rem;
-    --rail-w: min(100vw - 4rem, 112rem); overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+    .services-rail { overflow-x: auto; }
     .services-track { transform: none !important; }
 }
 
 .service-card-scrim {
-    /* Black wash, weighted to the lower half where the heading and copy sit.
-       Strong enough to hold white text over the palest photos. */
+    /* Confined to the lower half, behind the heading and copy. The top of every
+       photo is left completely clean - no veil across the image. */
     background: linear-gradient(to top,
-        rgba(0, 0, 0, 0.82) 0%,
-        rgba(0, 0, 0, 0.68) 32%,
-        rgba(0, 0, 0, 0.42) 62%,
-        rgba(0, 0, 0, 0.16) 100%);
+        rgba(0, 0, 0, 0.88) 0%,
+        rgba(0, 0, 0, 0.78) 20%,
+        rgba(0, 0, 0, 0.45) 38%,
+        rgba(0, 0, 0, 0) 58%);
 }
 
 .service-card h3,

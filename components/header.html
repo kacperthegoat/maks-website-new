@@ -23,6 +23,53 @@
     class="fixed w-full top-0 left-0 z-50 text-white shadow-lg flex flex-col border-b border-white/10"
     style="background:#2c3172;">
 
+    <!-- 1. Top contact bar - phone, email and social, right aligned. Static: no marquee, no motion. -->
+    <div id="header-topbar" class="w-full border-b border-white/10" style="background:#1f2352;">
+        <div
+            class="w-full max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex items-center justify-end gap-4 sm:gap-5 lg:gap-6 font-body text-[13px] sm:text-sm">
+
+            <a href="tel:+447817938507"
+                class="inline-flex items-center gap-2 text-white/90 hover:text-[#e5a824] transition-colors duration-150 whitespace-nowrap">
+                <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <path
+                        d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                </svg>
+                <span class="font-semibold">07817 938507</span>
+            </a>
+
+            <a href="mailto:norwichbuilders@hotmail.com"
+                class="inline-flex items-center gap-2 text-white/90 hover:text-[#e5a824] transition-colors duration-150 whitespace-nowrap"
+                aria-label="Email norwichbuilders@hotmail.com">
+                <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+                <span class="font-semibold hidden md:inline">norwichbuilders@hotmail.com</span>
+            </a>
+
+            <span class="hidden sm:block w-px h-4 bg-white/20" aria-hidden="true"></span>
+
+            <div class="flex items-center gap-3">
+                <a href="https://www.facebook.com/p/Norwich-Builders-100068577885824/" target="_blank"
+                    rel="noopener noreferrer" aria-label="Norwich Builders on Facebook"
+                    class="text-white/90 hover:text-[#e5a824] transition-colors duration-150">
+                    <svg class="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/norwich_builders_uk/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Norwich Builders on Instagram"
+                    class="text-white/90 hover:text-[#e5a824] transition-colors duration-150">
+                    <svg class="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- 2. Main Navigation -->
     <div id="header-container"
         class="w-full max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
@@ -41,6 +88,10 @@
         <nav class="hidden xl:flex items-center gap-6 font-body text-[15px] font-semibold tracking-wide">
             <a href="/index.html"
                 class="inline-block whitespace-nowrap transition-all duration-150 hover:text-[#e5a824]">Home</a>
+
+            <a href="/pages/about.html"
+                class="inline-block whitespace-nowrap transition-all duration-150 hover:text-[#e5a824]">About
+                Us</a>
 
             <!-- Services Dropdown -->
             <div class="relative group/nav">
@@ -74,28 +125,24 @@
                 </div>
             </div>
 
-            <a href="/pages/about.html"
-                class="inline-block whitespace-nowrap transition-all duration-150 hover:text-[#e5a824]">About
-                Us</a>
-
             <a href="/pages/gallery.html"
                 class="inline-block whitespace-nowrap transition-all duration-150 hover:text-[#e5a824]">Gallery</a>
 
-            <!-- Contact and Location -->
-            <div class="flex items-center gap-8 ml-4">
-                <a href="/pages/contact.html"
-                    class="inline-block whitespace-nowrap transition-all duration-150 hover:text-[#e5a824]">Contact</a>
+            <a href="/pages/testimonials.html"
+                class="inline-block whitespace-nowrap transition-all duration-150 hover:text-[#e5a824]">Testimonials</a>
 
-                <a href="javascript:void(0);" style="cursor: default;"
-                    class="group inline-flex items-center gap-1.5 whitespace-nowrap transition-all duration-150 hover:text-[#e5a824]">
-                    Norwich, Norfolk
-                    <svg class="w-4 h-4 shrink-0 transition-transform duration-150"
-                        fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                    </svg>
-                </a>
-            </div>
+            <a href="/pages/contact.html"
+                class="inline-block whitespace-nowrap transition-all duration-150 hover:text-[#e5a824]">Contact</a>
+
+            <a href="javascript:void(0);" style="cursor: default;"
+                class="group inline-flex items-center gap-1.5 whitespace-nowrap transition-all duration-150 hover:text-[#e5a824] ml-2">
+                Norwich, Norfolk
+                <svg class="w-4 h-4 shrink-0 transition-transform duration-150" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                </svg>
+            </a>
         </nav>
 
         <!-- Mobile hamburger -->
@@ -119,6 +166,10 @@
                 <a href="/index.html"
                     class="inline-block py-2 text-lg font-medium hover:text-[#e5a824] transition-all duration-150">Home</a>
 
+                <a href="/pages/about.html"
+                    class="inline-block py-2 text-lg font-medium hover:text-[#e5a824] transition-all duration-150">About
+                    Us</a>
+
                 <div class="border-y border-white/10 py-4 my-2 flex flex-col items-center">
                     <button onclick="document.getElementById('mobileServicesPanel').classList.toggle('hidden')"
                         class="inline-block text-lg font-bold text-white hover:text-[#e5a824] mb-2 transition-all duration-150">All
@@ -141,12 +192,11 @@
                     </div>
                 </div>
 
-                <a href="/pages/about.html"
-                    class="inline-block py-2 text-lg font-medium hover:text-[#e5a824] transition-all duration-150">About
-                    Us</a>
-
                 <a href="/pages/gallery.html"
                     class="inline-block py-2 text-lg font-medium hover:text-[#e5a824] transition-all duration-150">Gallery</a>
+
+                <a href="/pages/testimonials.html"
+                    class="inline-block py-2 text-lg font-medium hover:text-[#e5a824] transition-all duration-150">Testimonials</a>
 
                 <a href="/pages/contact.html"
                     class="inline-block py-2 text-lg font-medium hover:text-[#e5a824] transition-all duration-150">Contact</a>
@@ -155,7 +205,7 @@
                     <a href="/pages/contact.html"
                         class="btn-bubble btn-dark-bg font-body w-full justify-center transition-all duration-150">
                         <span class="btn-bubble-fill"></span>
-                        <span class="btn-bubble-text">Get a Quote</span>
+                        <span class="btn-bubble-text">Get Your Free Quote</span>
                         <span class="btn-bubble-icon-container">
                             <svg class="btn-bubble-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
