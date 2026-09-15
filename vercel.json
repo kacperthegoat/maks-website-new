@@ -35,5 +35,12 @@
       "source": "/pages/services",
       "destination": "/pages/services.html"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/pages/about.html",
+      "destination": "/",
+      "permanent": true
+    }
   ]
 }

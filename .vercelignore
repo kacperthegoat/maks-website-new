@@ -4,3 +4,7 @@ scratch/
 *.textClipping
 .DS_Store
 README.md
+
+# Raw client photo dump - unprocessed originals still carry EXIF/GPS metadata.
+# Only the processed, stripped copies in assets/imgs/real/ are served.
+assets/imgs/New-images-for-web/

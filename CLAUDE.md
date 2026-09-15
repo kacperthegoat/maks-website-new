@@ -20,7 +20,7 @@ This is a **content rebuild on the existing layout**, not a rename. The old site
 | Phone (display) | 07817 938507 |
 | Phone (href) | `tel:+447817938507` |
 | WhatsApp | `https://wa.me/447817938507` |
-| Address | 14 Penrice Road, Norwich — **postcode TODO**. Client has confirmed the street address may be published; it is live on the contact page and in `streetAddress`. |
+| Address | 14 Penrice Road, Little Plumstead, Norwich, NR13 5FP — full address approved for publishing by the client. Live on the contact page (Direct Contact) and in the `PostalAddress` schema on index.html. |
 | Opening hours | Mon–Fri, 8am–5pm |
 | Service area | Norwich and surrounding areas, Norfolk |
 | Domain | https://www.norwichbuilders.co.uk/ |
@@ -117,20 +117,45 @@ Remove Nick's Apps Script webhook. Build a new enquiry form delivering to norwic
 **Phase 7 — assets**
 Generate favicon set, app icons and OG image from the logo. Source stock for five services plus hero. Delete all 18 remaining fencing photos. Update `site.webmanifest`, `sitemap.xml`, `robots.txt`, the `style.css` header comment, `README.md`. **Delete `STANDFAST_REBUILD.md`** — it contains the old client's phone and email.
 
+**Phase 8 — About page removed, real photos added** — complete
+`pages/about.html` deleted at the client's request; its three copy blocks ("Over 20 Years of
+Building Experience", "Quality Workmanship & Personal Service", "Your Local Building Company")
+moved to the homepage directly under the sliding services section, and its "Our Services" /
+"Let's Bring Your Ideas to Life" blocks moved to `pages/services.html` around "Everything We
+Build". Nav is now Home, Services, Gallery, Testimonials, Contact (header + mobile drawer); a
+permanent redirect from `/pages/about.html` to `/` is in `vercel.json`.
+"Leave Us a Google Review" removed from index.html and services.html; kept only on
+testimonials.html. Top-bar "Norwich, Norfolk" pill and location icon removed from the desktop
+nav. Footer's "Contact Us" column (Location/Call Us/Email Us) removed — the client judged it
+redundant with the Direct Contact block on the contact page, which was left untouched, along
+with the enquiry form and the header's phone/email top bar; footer logo centred, "Follow us"
+label added above the social icons.
+Address resolved: 14 Penrice Road, Little Plumstead, Norwich, NR13 5FP, in Direct Contact and
+in the LocalBusiness schema's `postalCode`.
+Real client photos: Maks supplied ~130 raw phone photos in `assets/imgs/New-images-for-web/`
+(bathrooms, conversions, extension photos, kitchen, renovations — unsorted, mostly in-progress,
+some HEIC, all with EXIF/GPS intact). 18 finished, non-loft shots were selected, converted to
+WEBP (max 1600px wide, all metadata including GPS stripped) into `assets/imgs/real/`, added to
+the gallery, and swapped onto the homepage service cards (finished rooms only, per the client's
+rule) and one slot each on the five service pages. The raw source folder is excluded from the
+Vercel deployment via `.vercelignore` since the originals still carry GPS data; it is **not**
+excluded from git, so treat the repo itself as containing that metadata until it's cleaned up
+or moved out of version control.
+
 ---
 
 ## Outstanding — blocking
 
-1. **Postcode** — still needed. Contact page shows `[POSTCODE TODO]`; `postalCode` absent from schema.
-2. **Google Business Profile URL** — RESOLVED 2026-09-11. CID 14340383533896799532 /
+1. **Google Business Profile URL** — RESOLVED 2026-09-11. CID 14340383533896799532 /
    place_id ChIJGVQlQKNjjKsRLJXHcNhGA8c confirmed against the owner's Google Maps URL.
    Testimonial cards link to search.google.com/local/reviews?placeid=<place_id>.
-3. **Three review texts** — RESOLVED. Anika, Chris and Peter supplied verbatim on
+2. **Three review texts** — RESOLVED. Anika, Chris and Peter supplied verbatim on
    2026-09-11 and added as attributed excerpts; full originals in docs/REVIEWS-SOURCE.md.
-4. **About page text** — client is supplying it verbatim. His list names seven services against the
-   site's five ("Home Refurbishments" and "General Building Work" are extra); agency is raising the
-   mismatch with him rather than resolving it in the build.
-5. **Trust badges / credentials** — ask Maks whether he holds any.
+3. **About page** — RESOLVED 2026-09-15. Client asked for it removed entirely rather than
+   resolving the seven-vs-five services mismatch. `pages/about.html` deleted; its three
+   copy blocks moved to the homepage, "Our Services" and the closing CTA moved to
+   `pages/services.html`. Nav is now Home, Services, Gallery, Testimonials, Contact.
+4. **Trust badges / credentials** — ask Maks whether he holds any.
 
 ### Resolved 2026-09-10
 - **Publish address** — yes, client confirmed. Now on the contact page and in `streetAddress`.
@@ -138,6 +163,11 @@ Generate favicon set, app icons and OG image from the logo. Source stock for fiv
   ("Get Your Free Quote"). This reverses commit 1772a8e.
 - **Homepage intro paragraph** — the client supplied his own hero wording, which supersedes the
   singular/plural "time-served tradesman" line. That paragraph and its TODO-CONFIRM are gone.
+
+### Resolved 2026-09-15
+- **Postcode** — client supplied the full address: 14 Penrice Road, Little Plumstead, Norwich,
+  NR13 5FP. Live in Direct Contact on the contact page and as `postalCode` in the LocalBusiness
+  schema on index.html.
 
 ---
 
